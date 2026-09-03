@@ -1,4 +1,4 @@
-# Hi, I'm Zhongliang (Alex) Wang
+# Hi, I'm Alex Wang
 
 I am an experimental-computational cancer researcher interested in using tumor omics, single-cell and spatial analysis, functional genomics, and in vivo models to identify and validate therapeutic targets. I also have experience in DNA nanomedicine and targeted drug-delivery systems.
 
