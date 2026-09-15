@@ -77,6 +77,15 @@ Questions turned into reproducible analyses. Pick an experiment to explore.
       <p><code>Python</code> <code>Scanpy</code></p>
     </td>
   </tr>
+  <tr>
+    <td colspan="2" valign="top">
+      <img src="assets/project-crispr.svg" width="100%" alt="05 / CRISPR — perturbation to evidence" />
+      <h3><a href="https://github.com/Alex-w0731/breast-cancer-multiomics/tree/main/modules/crispr-screen">CRISPR Screen Workbench ↗</a></h3>
+      <p>Guide-level quality control, MAGeCK RRA, and separate contrasts across cell lines, with reproducible audits of published SCLC and TNBC screening results.</p>
+      <p><a href="https://github.com/Alex-w0731/breast-cancer-multiomics/blob/main/modules/crispr-screen/docs/cases/sclc/README.md">KDM6B / SCLC case</a> · <a href="https://github.com/Alex-w0731/breast-cancer-multiomics/blob/main/modules/crispr-screen/docs/cases/nc/README.md">TNBC metastasis case</a> · <a href="https://github.com/Alex-w0731/breast-cancer-multiomics/blob/main/modules/crispr-screen/docs/demo/README.md">Synthetic demo</a></p>
+      <p><code>Python</code> <code>MAGeCK</code> <code>Functional genomics</code><br /><sub>Published gene-summary case studies + synthetic count validation.</sub></p>
+    </td>
+  </tr>
 </table>
 
 ## 🛠 The toolbox
