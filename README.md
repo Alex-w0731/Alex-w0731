@@ -20,6 +20,7 @@
   <a href="#-the-scientist">About</a> ·
   <a href="#-research-playground">Projects</a> ·
   <a href="#-the-toolbox">Toolkit</a> ·
+  <a href="#-research-methods-radar">Research radar</a> ·
   <a href="#-selected-publications">Publications</a>
 </p>
 
@@ -105,6 +106,22 @@ R · Python · bulk RNA-seq · scRNA-seq · ChIP-seq · Seurat · Scanpy · Cell
 Genome-wide CRISPR-Cas9 screening · qRT-PCR · Western blotting · Co-IP · flow cytometry · mammalian cell culture · xenograft models · H&E · IHC · immunofluorescence · confocal microscopy · quantitative pathology-image analysis
 
 </details>
+
+## 🔭 Research methods radar
+
+A curated map of **97 public GitHub resources** connecting cancer mechanisms, functional genomics, single-cell and spatial omics, and DNA nanomedicine.
+
+[**Explore the research roadmap →**](research/README.md) · [**中文研究路线与90天计划 →**](research/README.zh-CN.md) · [Full catalogue](research/CATALOGUE.zh-CN.md)
+
+| Questions to explore | Methods to evaluate |
+|---|---|
+| How does spatial context shape treatment vulnerability? | SpatialData · BANKSY · LIANA+ · MultiNicheNet |
+| How do resistant states emerge and persist? | CellRank · moscot · Cassiopeia · SCENIC+ |
+| Can perturbation models improve experimental choices? | SCEPTRE · State · linear baselines · cell-eval |
+| How can geometry improve effective delivery? | scadnano · oxDNA · Ax |
+| What connects morphology, transcription and function? | CellProfiler · Pycytominer · QuPath · COSMOS |
+
+<sub>A learning and evaluation roadmap, with data requirements, validation steps and stopping conditions. Inclusion does not imply that I have used or validated every tool. [Sources and license notes](research/SOURCES.md) · Checked 26 September 2026.</sub>
 
 ## 📚 Selected publications
 
