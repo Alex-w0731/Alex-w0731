@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="286" viewBox="0 0 1100 286" role="img" aria-labelledby="title desc">
+<title id="title">AX / VOLUME — Alex Wang's reproducible 3D microscopy workflow</title>
+<desc id="desc">Seven stages: calibrate, organize OME-Zarr, reconstruct, segment, review, quantify, export. Quality control loops connect segmentation and human review; native labels remain separate from display meshes.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L7 4L0 8" fill="none" stroke="#63e4f2"/></marker></defs>
+<rect x="1" y="1" width="1098" height="284" rx="16" fill="#0d1424" stroke="#293b54"/>
+<g font-family="Segoe UI,Arial,sans-serif">
+<text x="32" y="43" fill="#63e4f2" font-size="15" letter-spacing="2">AX / VOLUME</text><text x="1067" y="43" fill="#9dacc6" font-size="13" text-anchor="end" letter-spacing="1">THE CURIOSITY LAB / ALEX WANG</text>
+<text x="32" y="77" fill="#edf3ff" font-size="28" font-weight="700">From microscopy voxels to reproducible evidence.</text>
+<path d="M164 151H186M310 151H332M456 151H478M602 151H624M748 151H770M894 151H916" stroke="#63e4f2" stroke-width="1.4" marker-end="url(#arrow)"/>
+<g fill="#121e32" stroke="#304662"><rect x="32" y="109" width="132" height="86" rx="7"/><rect x="186" y="109" width="124" height="86" rx="7"/><rect x="332" y="109" width="124" height="86" rx="7"/><rect x="478" y="109" width="124" height="86" rx="7"/><rect x="624" y="109" width="124" height="86" rx="7"/><rect x="770" y="109" width="124" height="86" rx="7"/><rect x="916" y="109" width="152" height="86" rx="7"/></g>
+<g fill="#bba2ff" font-size="12" font-family="Consolas,monospace"><text x="46" y="133">01 / PHYSICAL</text><text x="199" y="133">02 / MULTISCALE</text><text x="345" y="133">03 / OPTIONAL</text><text x="491" y="133">04 / CANDIDATE</text><text x="637" y="133">05 / HUMAN QC</text><text x="783" y="133">06 / NATIVE</text><text x="929" y="133">07 / PROVENANCE</text></g>
+<g fill="#edf3ff" font-size="17" font-weight="600"><text x="46" y="161">Calibrate</text><text x="199" y="161">Organize</text><text x="345" y="161">Reconstruct</text><text x="491" y="161">Segment</text><text x="637" y="161">Review</text><text x="783" y="161">Quantify</text><text x="929" y="161">Export evidence</text></g>
+<g fill="#9dacc6" font-size="12"><text x="46" y="181">AXES · SPACING · µm</text><text x="199" y="181">OME-ZARR · ROI</text><text x="345" y="181">STITCH · PSF</text><text x="491" y="181">MODEL · LABELS</text><text x="637" y="181">XY / XZ / YZ</text><text x="783" y="181">VOLUME · SPACE</text><text x="929" y="181">HASH · VERSION · QC</text></g>
+<path d="M687 195V215H541V198" stroke="#bba2ff" stroke-width="1.2" fill="none" marker-end="url(#arrow)"/>
+<text x="32" y="255" fill="#63e4f2" font-size="13">MEASURE NATIVE LABELS</text><text x="246" y="255" fill="#9dacc6" font-size="13">/</text><text x="263" y="255" fill="#bba2ff" font-size="13">DISPLAY SEPARATE MESHES</text><text x="1068" y="255" text-anchor="end" fill="#9dacc6" font-size="13">Research planner + synthetic 3D demonstration</text>
+</g></svg>

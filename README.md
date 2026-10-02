@@ -19,6 +19,7 @@
 <p align="center">
   <a href="#-the-scientist">About</a> ·
   <a href="#-research-playground">Projects</a> ·
+  <a href="#-3d-microscopy-workflow">3D imaging</a> ·
   <a href="#-the-toolbox">Toolkit</a> ·
   <a href="#-research-methods-radar">Research radar</a> ·
   <a href="#-selected-publications">Publications</a>
@@ -88,6 +89,31 @@ Questions turned into reproducible analyses. Pick an experiment to explore.
     </td>
   </tr>
 </table>
+
+## 🔬 3D microscopy workflow
+
+**AX / VOLUME** — my microscopy workflow for confocal z-stacks, cells, and the tumor microenvironment.
+
+[![AX / VOLUME — seven stages from microscopy voxels to reproducible evidence](assets/workflow-3d-imaging.svg)](research/3d-imaging/README.md)
+
+Physical calibration → multiscale data → optional reconstruction → candidate segmentation → human review → native-label quantification → reproducible evidence.
+
+[**Explore the workflow**](research/3d-imaging/README.md) · [**Interactive workbench / download HTML**](research/3d-imaging/workbench.html) · [**中文执行指南**](research/3d-imaging/GUIDE.zh-CN.md) · [Sources & license notes](research/3d-imaging/SOURCES.md)
+
+- **Inspect before interpreting** — preserve axes, physical units, channel identity, and raw-data checksums.
+- **Review across scales** — low-resolution 3D overview and original-resolution ROI checks; compare raw slices, candidate labels, and revisions.
+- **Measure and display separately** — quantify native labels, keep display meshes separate, and record parameters, transforms, and versions.
+
+<details>
+<summary><b>Open the interactive planner and start with a real TIFF</b></summary>
+
+Download `workbench.html` and open it in a browser. Click the seven nodes, configure voxel spacing and processing branches, rotate a synthetic volume, inspect orthogonal slices, compare threshold sensitivity, and export a run plan. It is a standalone file with no frontend installation.
+
+For real microscopy data, the [TIFF QC tool](research/3d-imaging/scripts/inspect_tiff.py) checks axes, physical spacing, intensity limits, and optional instance-label volumes. The [execution guide](research/3d-imaging/GUIDE.zh-CN.md) connects OME-Zarr, BigStitcher or multiview-stitcher, Cellpose, napari, and scientific rendering. [Nine synthetic tests](research/3d-imaging/scripts/tests/test_inspect_tiff.py) verify the QC tool; these are not biological or model-validation results.
+
+</details>
+
+<sub>Research planner + synthetic 3D demonstration. The browser does not run AI inference or read real samples. Referenced tools require external execution and sample-specific validation; spatial association does not establish causality. Sources checked 2 October 2026.</sub>
 
 ## 🛠 The toolbox
 
