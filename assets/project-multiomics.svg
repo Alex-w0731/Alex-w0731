@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="92" viewBox="0 0 480 92"><rect width="480" height="92" rx="10" fill="#0D1424"/><text x="22" y="30" font-family="Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#63E4F2">01 / MULTIOMICS</text><text x="22" y="61" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#9DACC6">CONNECT THE LAYERS</text><g fill="none" stroke="#63E4F2"><path d="M367 33l30-15 30 15-30 15zM367 43l30 15 30-15M367 54l30 15 30-15" stroke-width="2"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" role="img" aria-labelledby="title desc">
+  <title id="title">01 / Multiomics — connect the layers</title>
+  <desc id="desc">A dark research card with three connected data layers. The diagram is a schematic of multiomics integration, not an analysis result.</desc>
+  <rect x="1" y="1" width="758" height="238" rx="18" fill="#0D1424" stroke="#25344E" stroke-width="2"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="32" y="54" fill="#63E4F2" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="700">01</text>
+    <path d="M78 36V55" stroke="#30435E" stroke-width="2"/>
+    <text x="94" y="52" fill="#A6B5CD" font-size="15" letter-spacing="2">INTEGRATION</text>
+    <text x="32" y="116" fill="#EEF4FF" font-size="34" font-weight="700">MULTIOMICS</text>
+    <text x="33" y="149" fill="#A6B5CD" font-size="19">Connect the layers</text>
+  </g>
+  <path d="M426 38V202" stroke="#22324B" stroke-width="1.5"/>
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <path d="M477 137L586 110L698 145L589 173Z" fill="#172C40" stroke="#63E4F2" stroke-width="2.5"/>
+    <path d="M477 105L586 78L698 113L589 141Z" fill="#1D2340" stroke="#BBA2FF" stroke-width="2.5"/>
+    <path d="M477 73L586 46L698 81L589 109Z" fill="#122638" stroke="#63E4F2" stroke-width="2.5"/>
+    <g fill="none" stroke="#63E4F2" stroke-width="1.4" opacity=".3">
+      <path d="M513 64L625 99M550 55L662 90M514 85L623 58M551 97L660 70"/>
+    </g>
+    <circle cx="551" cy="76" r="4" fill="#63E4F2"/>
+    <circle cx="623" cy="87" r="4" fill="#63E4F2"/>
+    <circle cx="587" cy="111" r="4" fill="#BBA2FF"/>
+    <path d="M507 165V189H589M672 171V189H589M589 173V189" fill="none" stroke="#50617E" stroke-width="2"/>
+    <circle cx="589" cy="189" r="8" fill="#0D1424" stroke="#63E4F2" stroke-width="2.5"/>
+    <circle cx="589" cy="189" r="2.5" fill="#63E4F2"/>
+  </g>
+</svg>

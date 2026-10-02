@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" role="img" aria-labelledby="title desc">
+  <title id="title">06 / AX / VOLUME — 3D microscopy workflow</title>
+  <desc id="desc">Voxels to evidence. Seven stages: import and calibrate, multiscale storage, optional reconstruction, candidate segmentation, human review, native-space measurement, and evidence export. The review loop returns to candidate segmentation. The volume and three orthogonal slices are a scientific illustration, not model inference or real measurements. Native labels supply measurements; display meshes remain separate.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0D1627"/>
+      <stop offset="1" stop-color="#101D31"/>
+    </linearGradient>
+    <radialGradient id="field" cx="0.74" cy="0.48" r="0.62">
+      <stop stop-color="#1E4660" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#102034" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="trace" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#63E4F2"/>
+      <stop offset="1" stop-color="#BBA2FF"/>
+    </linearGradient>
+    <radialGradient id="cyan-cell" cx="0.38" cy="0.35" r="0.7">
+      <stop stop-color="#B6FFFF"/>
+      <stop offset="0.45" stop-color="#63E4F2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#258BAB" stop-opacity="0.3"/>
+    </radialGradient>
+    <radialGradient id="purple-cell" cx="0.35" cy="0.35" r="0.7">
+      <stop stop-color="#E9D9FF"/>
+      <stop offset="0.48" stop-color="#BBA2FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#765ACA" stop-opacity="0.35"/>
+    </radialGradient>
+    <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" fill="none" stroke="#82A9C7" stroke-opacity="0.055"/>
+    </pattern>
+    <clipPath id="card-clip"><rect width="760" height="240" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#card-clip)">
+    <rect width="760" height="240" fill="url(#background)"/>
+    <rect x="398" width="362" height="240" fill="url(#field)"/>
+    <rect x="418" y="20" width="342" height="220" fill="url(#grid)"/>
+    <path d="M432 240L560 126L760 164" fill="none" stroke="#426685" stroke-opacity="0.12"/>
+    <path d="M36 1H310" stroke="url(#trace)" stroke-width="2"/>
+    <path d="M736 24H748V36M12 204V216H24" fill="none" stroke="#49647F" stroke-opacity="0.65"/>
+  </g>
+  <rect x="0.75" y="0.75" width="758.5" height="238.5" rx="17.25" fill="none" stroke="#2B4058" stroke-width="1.5"/>
+
+  <g font-family="Segoe UI,Arial,Helvetica,sans-serif">
+    <text x="36" y="45" fill="#63E4F2" font-size="15" font-weight="600" letter-spacing="2.2">06 / 3D MICROSCOPY</text>
+    <text x="34" y="101" fill="#EDF3FF" font-size="38" font-weight="700" letter-spacing="-1.2">AX / VOLUME</text>
+    <text x="36" y="141" fill="#C6D6EB" font-size="24" font-weight="400">Voxels → evidence</text>
+    <text x="36" y="180" fill="#94AAC6" font-size="13" font-weight="600" letter-spacing="1.3">7 STAGES · HUMAN REVIEW</text>
+  </g>
+
+  <!-- Seven stages; the fifth node loops back to candidate segmentation. -->
+  <path d="M40 206H316" fill="none" stroke="url(#trace)" stroke-width="1.5" stroke-opacity="0.65"/>
+  <path d="M224 201V193H178V201" fill="none" stroke="#BBA2FF" stroke-width="1.35" stroke-linejoin="round"/>
+  <path d="M175 198L178 202L181 198" fill="none" stroke="#BBA2FF" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#102237" stroke="#63E4F2" stroke-width="1.5">
+    <circle cx="40" cy="206" r="4.5"/>
+    <circle cx="86" cy="206" r="4.5"/>
+    <circle cx="132" cy="206" r="4.5"/>
+    <circle cx="178" cy="206" r="4.5"/>
+    <circle cx="224" cy="206" r="5.5" fill="#BBA2FF" stroke="#BBA2FF"/>
+    <circle cx="270" cy="206" r="4.5" stroke="#BBA2FF"/>
+    <circle cx="316" cy="206" r="4.5" fill="#63E4F2"/>
+  </g>
+
+  <!-- Transparent physical volume with three orthogonal planes. -->
+  <g stroke-linejoin="round">
+    <path d="M454 88L506 43L626 67L574 112Z" fill="#173147" fill-opacity="0.8" stroke="#46677F" stroke-width="1.2"/>
+    <path d="M454 88L574 112V195L454 171Z" fill="#102337" fill-opacity="0.65" stroke="#63E4F2" stroke-opacity="0.55" stroke-width="1.2"/>
+    <path d="M574 112L626 67V150L574 195Z" fill="#173345" fill-opacity="0.65" stroke="#63E4F2" stroke-opacity="0.55" stroke-width="1.2"/>
+    <path d="M506 43V126L454 171M506 126L626 150" fill="none" stroke="#537793" stroke-opacity="0.55" stroke-dasharray="3 4"/>
+
+    <path d="M480 66L600 90V173L480 149Z" fill="#BBA2FF" fill-opacity="0.07" stroke="#BBA2FF" stroke-opacity="0.65"/>
+    <path d="M514 100L566 55V138L514 183Z" fill="#63E4F2" fill-opacity="0.055" stroke="#63E4F2" stroke-opacity="0.65"/>
+    <path d="M454 129L506 84L626 108L574 153Z" fill="#63E4F2" fill-opacity="0.11" stroke="#63E4F2" stroke-opacity="0.8"/>
+
+    <g stroke-width="0.65">
+      <ellipse cx="522" cy="108" rx="13" ry="10" transform="rotate(-16 522 108)" fill="url(#cyan-cell)" stroke="#AAFBFF" stroke-opacity="0.55"/>
+      <ellipse cx="552" cy="145" rx="13" ry="9" transform="rotate(20 552 145)" fill="url(#purple-cell)" stroke="#D8C7FF" stroke-opacity="0.55"/>
+      <ellipse cx="570" cy="104" rx="10" ry="8" transform="rotate(-12 570 104)" fill="url(#purple-cell)" stroke="#D8C7FF" stroke-opacity="0.5"/>
+      <ellipse cx="486" cy="132" rx="9" ry="7" transform="rotate(18 486 132)" fill="url(#cyan-cell)" stroke="#AAFBFF" stroke-opacity="0.55"/>
+      <ellipse cx="594" cy="134" rx="8" ry="11" transform="rotate(27 594 134)" fill="url(#cyan-cell)" stroke="#AAFBFF" stroke-opacity="0.5"/>
+    </g>
+    <path d="M454 88L574 112L626 67M574 112V195" fill="none" stroke="#84EAF2" stroke-opacity="0.85" stroke-width="1.4"/>
+  </g>
+
+  <!-- Corresponding XY, XZ and YZ slice views. -->
+  <g fill="none" stroke="#63E4F2" stroke-opacity="0.32" stroke-width="1">
+    <path d="M632 89H648V68H666"/>
+    <path d="M632 118H656V122H666"/>
+    <path d="M626 158H648V176H666"/>
+  </g>
+  <g fill="#0A1728" stroke="#416580" stroke-width="1">
+    <rect x="666" y="46" width="60" height="44" rx="5"/>
+    <rect x="666" y="100" width="60" height="44" rx="5"/>
+    <rect x="666" y="154" width="60" height="44" rx="5"/>
+  </g>
+  <g fill="#63E4F2" fill-opacity="0.75">
+    <ellipse cx="686" cy="73" rx="7" ry="5"/>
+    <ellipse cx="709" cy="126" rx="5" ry="8"/>
+    <ellipse cx="684" cy="182" rx="5" ry="7"/>
+  </g>
+  <g fill="#BBA2FF" fill-opacity="0.8">
+    <ellipse cx="708" cy="71" rx="6" ry="5"/>
+    <ellipse cx="687" cy="127" rx="5" ry="7"/>
+    <ellipse cx="708" cy="181" rx="4" ry="8"/>
+  </g>
+  <g font-family="Consolas,Menlo,monospace" font-size="10" fill="#C6D6EB">
+    <text x="673" y="59">XY</text>
+    <text x="673" y="113">XZ</text>
+    <text x="673" y="167">YZ</text>
+  </g>
+  <path d="M447 214H626" stroke="#334F68" stroke-width="1"/>
+  <path d="M447 211V217M626 211V217" stroke="#63809B" stroke-width="1"/>
+</svg>

@@ -1,1 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="92" viewBox="0 0 480 92"><rect width="480" height="92" rx="10" fill="#0D1424"/><text x="22" y="30" font-family="Menlo,Consolas,monospace" font-size="18" font-weight="400" fill="#BBA2FF">04 / SINGLE CELL</text><text x="22" y="61" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="400" fill="#9DACC6">EXPLORE HETEROGENEITY</text><g fill="#BBA2FF" stroke="#BBA2FF"><circle cx="371" cy="29" r="5"/><circle cx="387" cy="22" r="3"/><circle cx="380" cy="44" r="4"/><circle cx="361" cy="48" r="3"/><circle cx="412" cy="59" r="6"/><circle cx="432" cy="47" r="3"/><circle cx="423" cy="73" r="4"/><circle cx="402" cy="76" r="3"/><path d="M375 30l8 11M416 60l13-10" fill="none" opacity=".45"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="240" viewBox="0 0 760 240" role="img" aria-labelledby="title desc">
+  <title id="title">04 / Single cell — explore heterogeneity</title>
+  <desc id="desc">A dark research card with three schematic groups of cells in an embedding. The dots are illustrative, not a measured single-cell dataset.</desc>
+  <rect x="1" y="1" width="758" height="238" rx="18" fill="#0D1424" stroke="#25344E" stroke-width="2"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="32" y="54" fill="#BBA2FF" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="700">04</text>
+    <path d="M78 36V55" stroke="#30435E" stroke-width="2"/>
+    <text x="94" y="52" fill="#A6B5CD" font-size="15" letter-spacing="2">CELLULAR STATES</text>
+    <text x="32" y="116" fill="#EEF4FF" font-size="34" font-weight="700">SINGLE CELL</text>
+    <text x="33" y="149" fill="#A6B5CD" font-size="19">Explore heterogeneity</text>
+  </g>
+  <path d="M426 38V202" stroke="#22324B" stroke-width="1.5"/>
+  <path d="M471 56V185H715" fill="none" stroke="#50617E" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#63E4F2">
+    <circle cx="506" cy="97" r="5"/><circle cx="522" cy="77" r="5"/>
+    <circle cx="539" cy="91" r="6"/><circle cx="523" cy="111" r="5"/>
+    <circle cx="550" cy="113" r="4"/><circle cx="497" cy="118" r="4"/>
+    <circle cx="542" cy="69" r="4"/><circle cx="512" cy="133" r="5"/>
+  </g>
+  <g fill="#BBA2FF">
+    <circle cx="601" cy="139" r="6"/><circle cx="586" cy="160" r="5"/>
+    <circle cx="621" cy="159" r="5"/><circle cx="625" cy="131" r="4"/>
+    <circle cx="603" cy="174" r="4"/><circle cx="581" cy="137" r="4"/>
+    <circle cx="638" cy="147" r="4"/><circle cx="612" cy="115" r="4"/>
+  </g>
+  <g fill="#7D9ACF">
+    <circle cx="670" cy="68" r="5"/><circle cx="687" cy="83" r="6"/>
+    <circle cx="655" cy="89" r="4"/><circle cx="673" cy="103" r="5"/>
+    <circle cx="703" cy="65" r="4"/><circle cx="702" cy="103" r="4"/>
+    <circle cx="682" cy="50" r="4"/>
+  </g>
+</svg>
