@@ -94,11 +94,13 @@ Questions turned into reproducible analyses. Pick an experiment to explore.
 
 **AX / VOLUME** — my microscopy workflow for confocal z-stacks, cells, and the tumor microenvironment.
 
-[![AX / VOLUME — seven stages from microscopy voxels to reproducible evidence](assets/workflow-3d-imaging.svg)](research/3d-imaging/README.md)
+[![AX / VOLUME — seven stages from microscopy voxels to reproducible evidence](assets/workflow-3d-imaging.svg)](research/3d-imaging/README.en.md)
 
 Physical calibration → multiscale data → optional reconstruction → candidate segmentation → human review → native-label quantification → reproducible evidence.
 
-[**Explore the workflow**](research/3d-imaging/README.md) · [**Interactive workbench / download HTML**](research/3d-imaging/workbench.html) · [**中文执行指南**](research/3d-imaging/GUIDE.zh-CN.md) · [Sources & license notes](research/3d-imaging/SOURCES.md)
+[**Explore the workflow in English**](research/3d-imaging/README.en.md) · [**English workbench / download HTML**](research/3d-imaging/workbench.en.html) · [**中文版**](research/3d-imaging/README.md)
+
+[English execution guide](research/3d-imaging/GUIDE.en.md) · [中文执行指南](research/3d-imaging/GUIDE.zh-CN.md) · [Sources & license notes](research/3d-imaging/SOURCES.en.md)
 
 - **Inspect before interpreting** — preserve axes, physical units, channel identity, and raw-data checksums.
 - **Review across scales** — low-resolution 3D overview and original-resolution ROI checks; compare raw slices, candidate labels, and revisions.
@@ -107,9 +109,9 @@ Physical calibration → multiscale data → optional reconstruction → candida
 <details>
 <summary><b>Open the interactive planner and start with a real TIFF</b></summary>
 
-Download `workbench.html` and open it in a browser. Click the seven nodes, configure voxel spacing and processing branches, rotate a synthetic volume, inspect orthogonal slices, compare threshold sensitivity, and export a run plan. It is a standalone file with no frontend installation.
+Download `workbench.en.html` for English or `workbench.html` for Chinese and open it in a browser. Click the seven nodes, configure voxel spacing and processing branches, rotate a synthetic volume, inspect orthogonal slices, compare threshold sensitivity, and export a run plan. Each version is a standalone file with no frontend installation. Save both in the same folder to use the language links.
 
-For real microscopy data, the [TIFF QC tool](research/3d-imaging/scripts/inspect_tiff.py) checks axes, physical spacing, intensity limits, and optional instance-label volumes. The [execution guide](research/3d-imaging/GUIDE.zh-CN.md) connects OME-Zarr, BigStitcher or multiview-stitcher, Cellpose, napari, and scientific rendering. [Nine synthetic tests](research/3d-imaging/scripts/tests/test_inspect_tiff.py) verify the QC tool; these are not biological or model-validation results.
+For real microscopy data, the [TIFF QC tool](research/3d-imaging/scripts/inspect_tiff.py) checks axes, physical spacing, intensity limits, and optional instance-label volumes. The [English execution guide](research/3d-imaging/GUIDE.en.md) connects OME-Zarr, BigStitcher or multiview-stitcher, Cellpose, napari, and scientific rendering. [Nine synthetic tests](research/3d-imaging/scripts/tests/test_inspect_tiff.py) verify the QC tool; these are not biological or model-validation results.
 
 </details>
 

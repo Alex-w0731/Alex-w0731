@@ -1,5 +1,7 @@
 # AX / VOLUME
 
+**中文** · [English](README.en.md)
+
 **Alex Wang 的显微三维成像 workflow** · 共聚焦、三维 TIFF、细胞与肿瘤微环境研究。
 
 ![Seven-stage microscopy workflow](../../assets/workflow-3d-imaging.svg)
@@ -9,6 +11,8 @@
 ## 使用交互工作台
 
 **[下载工作台 HTML](workbench.html)**：打开文件页面的 Download raw file，保存 `workbench.html`，用浏览器打开。只有一个文件，无前端安装、外部 CDN 或在线数据上传。GitHub 的 README 无法直接执行 JavaScript，工作台因此作为独立 HTML 提供。
+
+[英文工作台](workbench.en.html)功能相同。下载后使用语言切换链接时，请把两个 HTML 文件保存在同一目录；每个版本也能独立使用。
 
 你可以立即：
 
