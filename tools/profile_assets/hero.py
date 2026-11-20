@@ -359,13 +359,17 @@ def build_svg(mobile: bool = False):
 
     # name
     NY = 146
-    name_attrs = f'class="s" x="{X0 - 2}" y="{NY}" font-size="68" font-weight="800" letter-spacing="4"'
+    # textLength pins the rendered width, so wider fallback fonts (Segoe UI Black, DejaVu Sans)
+    # cannot push the lock-up into the scan frame. Values are the natural widths in the first font.
+    name_attrs = (f'class="s" x="{X0 - 2}" y="{NY}" font-size="68" font-weight="800" letter-spacing="4" '
+                  'textLength="433" lengthAdjust="spacingAndGlyphs"')
     a(f'<text {name_attrs} fill="#19CFFF" opacity=".42" filter="url(#nf)">ALEX WANG</text>')
     a(f'<text {name_attrs} fill="url(#ng)">ALEX WANG</text>')
     # tagline + domains
-    a(f'<text class="s" x="{X0}" y="{NY + 37}" font-size="19.5" font-weight="500" fill="#DCE9FF" letter-spacing=".1">'
+    a(f'<text class="s" x="{X0}" y="{NY + 37}" font-size="19.5" font-weight="500" fill="#DCE9FF" letter-spacing=".1" '
+      'textLength="414" lengthAdjust="spacingAndGlyphs">'
       f'Experimental <tspan fill="{MAG_HI}">×</tspan> computational cancer research</text>')
-    a(f'<text class="s" x="{X0}" y="{NY + 61}" font-size="13" fill="{MUTED}">'
+    a(f'<text class="s" x="{X0}" y="{NY + 61}" font-size="13" fill="{MUTED}" textLength="416" lengthAdjust="spacingAndGlyphs">'
       f'tumor immunology <tspan fill="{CYAN}">·</tspan> functional genomics '
       f'<tspan fill="{CYAN}">·</tspan> single-cell &amp; spatial omics</text>')
 

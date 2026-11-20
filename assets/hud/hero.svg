@@ -65,10 +65,10 @@
 <path d="M458 45.2H526" stroke="url(#eg)" stroke-width="1" fill="none"/>
 <path class="pl" d="M458 45.2H526" stroke="#D9FCFF" stroke-width="1.2" fill="none" stroke-dasharray="12 400" stroke-dashoffset="12" stroke-linecap="round"/>
 <path d="M526 41.2v8" stroke="#2CE8FF" stroke-opacity=".8" stroke-width="1"/>
-<text class="s" x="42" y="146" font-size="68" font-weight="800" letter-spacing="4" fill="#19CFFF" opacity=".42" filter="url(#nf)">ALEX WANG</text>
-<text class="s" x="42" y="146" font-size="68" font-weight="800" letter-spacing="4" fill="url(#ng)">ALEX WANG</text>
-<text class="s" x="44" y="183" font-size="19.5" font-weight="500" fill="#DCE9FF" letter-spacing=".1">Experimental <tspan fill="#FF8CCB">×</tspan> computational cancer research</text>
-<text class="s" x="44" y="207" font-size="13" fill="#8FA3C8">tumor immunology <tspan fill="#2CE8FF">·</tspan> functional genomics <tspan fill="#2CE8FF">·</tspan> single-cell &amp; spatial omics</text>
+<text class="s" x="42" y="146" font-size="68" font-weight="800" letter-spacing="4" textLength="433" lengthAdjust="spacingAndGlyphs" fill="#19CFFF" opacity=".42" filter="url(#nf)">ALEX WANG</text>
+<text class="s" x="42" y="146" font-size="68" font-weight="800" letter-spacing="4" textLength="433" lengthAdjust="spacingAndGlyphs" fill="url(#ng)">ALEX WANG</text>
+<text class="s" x="44" y="183" font-size="19.5" font-weight="500" fill="#DCE9FF" letter-spacing=".1" textLength="414" lengthAdjust="spacingAndGlyphs">Experimental <tspan fill="#FF8CCB">×</tspan> computational cancer research</text>
+<text class="s" x="44" y="207" font-size="13" fill="#8FA3C8" textLength="416" lengthAdjust="spacingAndGlyphs">tumor immunology <tspan fill="#2CE8FF">·</tspan> functional genomics <tspan fill="#2CE8FF">·</tspan> single-cell &amp; spatial omics</text>
 <path d="M49 232 70.27 232 70.27 253 65.27 258 44 258 44 237Z" fill="#2CE8FF" fill-opacity=".07" stroke="#2CE8FF" stroke-opacity=".55" stroke-width="1"/>
 <text class="m" x="57.13" y="249.2" font-size="12" text-anchor="middle" fill="#CFF6FF">R</text>
 <path d="M83.27 232 140.53 232 140.53 253 135.53 258 78.27 258 78.27 237Z" fill="#2CE8FF" fill-opacity=".07" stroke="#2CE8FF" stroke-opacity=".55" stroke-width="1"/>
