@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import math
 
-from theme import T, W, document, panel, text
+from theme import MW, T, W, document, panel, text
 
 H = 316
 CX, CY, R = 172, 164, 112
@@ -22,32 +22,25 @@ DIRECTIONS = [
 ]
 
 
-def build_svg() -> str:
-    out = [panel(W, H, accent="violet")]
-    out.append("  " + text(28, 34, "RESEARCH RADAR", size=12, cls="mono low caps"))
-    out.append("  " + text(W - 28, 34, "A LEARNING ROADMAP, NOT A LIST OF RESULTS", size=12, cls="mono low caps", anchor="end"))
-    # scope
-    rings = "".join(f'<circle cx="{CX}" cy="{CY}" r="{R * f:g}" fill="none" stroke="{T["line2"]}" stroke-width="1"/>' for f in (0.33, 0.66, 1.0))
-    cross = f'<path d="M{CX - R} {CY}h{2 * R}M{CX} {CY - R}v{2 * R}" stroke="{T["line2"]}" stroke-width="1"/>'
+def _scope(cx: float, cy: float, r: float) -> str:
+    rings = "".join(f'<circle cx="{cx}" cy="{cy}" r="{r * f:g}" fill="none" stroke="{T["line2"]}" stroke-width="1"/>' for f in (0.33, 0.66, 1.0))
+    cross = f'<path d="M{cx - r} {cy}h{2 * r}M{cx} {cy - r}v{2 * r}" stroke="{T["line2"]}" stroke-width="1"/>'
     ticks = "".join(
-        f'<line x1="{CX + (R - 5) * math.cos(math.radians(a)):.1f}" y1="{CY + (R - 5) * math.sin(math.radians(a)):.1f}" '
-        f'x2="{CX + R * math.cos(math.radians(a)):.1f}" y2="{CY + R * math.sin(math.radians(a)):.1f}" stroke="{T["low"]}" stroke-width="1"/>'
+        f'<line x1="{cx + (r - 5) * math.cos(math.radians(a)):.1f}" y1="{cy + (r - 5) * math.sin(math.radians(a)):.1f}" '
+        f'x2="{cx + r * math.cos(math.radians(a)):.1f}" y2="{cy + r * math.sin(math.radians(a)):.1f}" stroke="{T["low"]}" stroke-width="1"/>'
         for a in range(0, 360, 15)
     )
-    # sweep wedge (rotates around the scope centre: the transparent circle fixes the bounding box)
     a = math.radians(-38)
     wedge = (
-        f'<g class="sweep"><circle cx="{CX}" cy="{CY}" r="{R}" fill="none"/>'
-        f'<path d="M{CX} {CY}L{CX + R} {CY}A{R} {R} 0 0 0 {CX + R * math.cos(a):.1f} {CY + R * math.sin(a):.1f}Z" fill="url(#sweepG)"/>'
-        f'<line x1="{CX}" y1="{CY}" x2="{CX + R}" y2="{CY}" stroke="{T["cyan2"]}" stroke-width="1.6" stroke-linecap="round"/></g>'
+        f'<g class="sweep"><circle cx="{cx}" cy="{cy}" r="{r}" fill="none"/>'
+        f'<path d="M{cx} {cy}L{cx + r} {cy}A{r} {r} 0 0 0 {cx + r * math.cos(a):.1f} {cy + r * math.sin(a):.1f}Z" fill="url(#sweepG)"/>'
+        f'<line x1="{cx}" y1="{cy}" x2="{cx + r}" y2="{cy}" stroke="{T["cyan2"]}" stroke-width="1.6" stroke-linecap="round"/></g>'
     )
-    out.append(f'  <circle cx="{CX}" cy="{CY}" r="{R}" fill="{T["bg0"]}" fill-opacity=".55"/>{rings}{cross}{ticks}{wedge}<circle cx="{CX}" cy="{CY}" r="2.5" fill="{T["cyan2"]}"/>')
-    # blips and list
-    y0, step = 76, 46
-    for i, (title, methods, color, (ang, frac)) in enumerate(DIRECTIONS):
+    out = [f'  <circle cx="{cx}" cy="{cy}" r="{r}" fill="{T["bg0"]}" fill-opacity=".55"/>{rings}{cross}{ticks}{wedge}<circle cx="{cx}" cy="{cy}" r="2.5" fill="{T["cyan2"]}"/>']
+    for i, (_, _, color, (ang, frac)) in enumerate(DIRECTIONS):
         c = T[color]
-        bx = CX + R * frac * math.cos(math.radians(ang))
-        by = CY + R * frac * math.sin(math.radians(ang))
+        bx = cx + r * frac * math.cos(math.radians(ang))
+        by = cy + r * frac * math.sin(math.radians(ang))
         halo = "haloM" if color == "magenta" else "halo"
         out.append(
             f'  <circle cx="{bx:.1f}" cy="{by:.1f}" r="13" fill="url(#{halo})"/>'
@@ -55,6 +48,51 @@ def build_svg() -> str:
             f'<circle cx="{bx:.1f}" cy="{by:.1f}" r="8.5" fill="none" stroke="{c}" stroke-opacity=".5"/>'
             + text(bx + 12, by - 9, f"0{i + 1}", size=10.5, cls="mono", extra=f' fill="{c}"')
         )
+    return "\n".join(out)
+
+
+SWEEP_DEFS = (
+    f'<linearGradient id="sweepG" x1="1" y1=".5" x2=".55" y2="0"><stop offset="0" stop-color="{T["cyan"]}" stop-opacity=".42"/>'
+    f'<stop offset="1" stop-color="{T["cyan"]}" stop-opacity="0"/></linearGradient>'
+)
+SWEEP_STYLE = ".sweep { transform-box: fill-box; transform-origin: center; animation: spin 9s linear infinite; }\n"
+TITLE = "Research radar: " + "; ".join(f"{t} ({m})" for t, m, _, _ in DIRECTIONS)
+
+
+def build_mobile_svg() -> str:
+    """Narrow-screen layout: the scope on top, the five directions listed below."""
+    cx, cy, r = MW // 2, 162, 104
+    y0, step = 318, 50
+    h = y0 + len(DIRECTIONS) * step + 44
+    out = [panel(MW, h, accent="violet")]
+    out.append("  " + text(26, 36, "RESEARCH RADAR", size=12, cls="mono low caps"))
+    out.append(_scope(cx, cy, r))
+    for i, (title, methods, color, _) in enumerate(DIRECTIONS):
+        c = T[color]
+        y = y0 + i * step
+        out.append(
+            f'  <rect x="24" y="{y - 14}" width="28" height="22" rx="6" fill="{c}" fill-opacity=".12" stroke="{c}" stroke-opacity=".7"/>'
+            + text(38, y + 1.5, f"0{i + 1}", size=12, cls="mono b", anchor="middle", extra=f' fill="{c}"')
+            + text(64, y + 1, title, size=15, cls="sans sb hi")
+            + text(64, y + 21, methods, size=11.5, cls="mono low")
+        )
+    yb = y0 + len(DIRECTIONS) * step + 10
+    out.append(
+        f'  <text x="24" y="{yb + 8}" font-size="30" class="mono b" fill="url(#acc)">{CATALOGUE_SIZE}</text>'
+        + text(72, yb - 3, "PUBLIC RESOURCES", size=11, cls="mono mid caps")
+        + text(72, yb + 11, "MAPPED IN THE CATALOGUE", size=11, cls="mono low caps")
+    )
+    return document(MW, h, "\n".join(out), TITLE, extra_defs=SWEEP_DEFS, extra_style=SWEEP_STYLE)
+
+
+def build_svg() -> str:
+    out = [panel(W, H, accent="violet")]
+    out.append("  " + text(28, 34, "RESEARCH RADAR", size=12, cls="mono low caps"))
+    out.append("  " + text(W - 28, 34, "A LEARNING ROADMAP, NOT A LIST OF RESULTS", size=12, cls="mono low caps", anchor="end"))
+    out.append(_scope(CX, CY, R))
+    y0, step = 76, 46
+    for i, (title, methods, color, _) in enumerate(DIRECTIONS):
+        c = T[color]
         y = y0 + i * step
         x = 336
         out.append(
@@ -73,17 +111,12 @@ def build_svg() -> str:
         + text(tx + tw / 2, ty + 140, "RESOURCES", size=10.5, cls="mono mid caps", anchor="middle")
         + text(tx + tw / 2, ty + 156, "MAPPED", size=10.5, cls="mono mid caps", anchor="middle")
     )
-    extra_defs = (
-        f'<linearGradient id="sweepG" x1="1" y1=".5" x2=".55" y2="0"><stop offset="0" stop-color="{T["cyan"]}" stop-opacity=".42"/>'
-        f'<stop offset="1" stop-color="{T["cyan"]}" stop-opacity="0"/></linearGradient>'
-    )
-    extra_style = ".sweep { transform-box: fill-box; transform-origin: center; animation: spin 9s linear infinite; }\n"
-    title = "Research radar: " + "; ".join(f"{t} ({m})" for t, m, _, _ in DIRECTIONS)
-    return document(W, H, "\n".join(out), title, extra_defs=extra_defs, extra_style=extra_style)
+    return document(W, H, "\n".join(out), TITLE, extra_defs=SWEEP_DEFS, extra_style=SWEEP_STYLE)
 
 
 def build(out_dir) -> list[str]:
     from theme import write
 
     write(f"{out_dir}/radar.svg", build_svg())
-    return ["radar.svg"]
+    write(f"{out_dir}/m/radar.svg", build_mobile_svg())
+    return ["radar.svg", "m/radar.svg"]

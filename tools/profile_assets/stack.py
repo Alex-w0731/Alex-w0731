@@ -1,7 +1,7 @@
 """Tools and methods: what is used to compute, and what is used to validate."""
 from __future__ import annotations
 
-from theme import T, W, chip_row, document, panel, text
+from theme import MW, T, W, chip_row, document, panel, text
 
 COMPUTE = ["R", "Python", "Seurat", "Scanpy", "CellChat", "CytoTRACE2", "Palantir", "pySCENIC",
            "bulk RNA-seq", "scRNA-seq", "ChIP-seq", "survival analysis", "pathway enrichment"]
@@ -11,16 +11,17 @@ VALIDATE = ["CRISPR-Cas9 screens", "qRT-PCR", "Western blot", "Co-IP", "flow cyt
 COL_W = 392
 
 
-def _column(x: float, title: str, caption: str, items: list[str], color: str, icon: str) -> tuple[str, float]:
+def _column(x: float, title: str, caption: str, items: list[str], color: str, icon: str, dy: float = 0,
+            chip_size: float = 12, chip_h: float = 24) -> tuple[str, float]:
     c = T[color]
     out = [
-        f'<rect x="{x}" y="30" width="30" height="30" rx="8" fill="{c}" fill-opacity=".12" stroke="{c}" stroke-opacity=".7"/>{icon}',
-        text(x + 42, 44, title, size=15, cls="mono b caps", extra=f' fill="{c}"'),
-        text(x + 42, 61, caption, size=12.5, cls="sans mid"),
+        f'<g transform="translate(0 {dy:g})"><rect x="{x}" y="30" width="30" height="30" rx="8" fill="{c}" fill-opacity=".12" stroke="{c}" stroke-opacity=".7"/>{icon}</g>',
+        text(x + 42, 44 + dy, title, size=15, cls="mono b caps", extra=f' fill="{c}"'),
+        text(x + 42, 61 + dy, caption, size=12.5, cls="sans mid"),
     ]
-    row, _, last_y = chip_row(x, 80, [(i, color) for i in items], size=12, height=24, gap=8, max_width=COL_W)
+    row, _, last_y = chip_row(x, 80 + dy, [(i, color) for i in items], size=chip_size, height=chip_h, gap=8, max_width=COL_W)
     out.append(row)
-    return "  " + "\n  ".join(out), last_y + 24
+    return "  " + "\n  ".join(out), last_y + chip_h
 
 
 def build_svg() -> str:
@@ -42,8 +43,25 @@ def build_svg() -> str:
     return document(W, height, body, title)
 
 
+def build_mobile_svg() -> str:
+    """Narrow-screen layout: the two blocks stacked, with larger chips."""
+    x = 24
+    cy, mg = T["cyan"], T["magenta"]
+    icon_l = f'<path d="M{x + 9} 39l6 6l-6 6M{x + 17} 52h6" fill="none" stroke="{cy}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>'
+    icon_r = f'<path d="M{x + 12} 37h6M{x + 13} 37v6l-5 9a1.6 1.6 0 0 0 1.4 2.4h11.2a1.6 1.6 0 0 0 1.4-2.4l-5-9v-6" fill="none" stroke="{mg}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>'
+    top, bottom_top = _column(x, "COMPUTE", "tumor omics, cell states, reproducible analysis", COMPUTE, "cyan", icon_l, chip_size=13, chip_h=26)
+    dy = bottom_top + 6
+    bottom, bottom_end = _column(x, "VALIDATE", "functional genomics, tumor models, imaging", VALIDATE, "magenta", icon_r, dy=dy, chip_size=13, chip_h=26)
+    height = int(bottom_end + 28)
+    divider = f'  <line x1="{x}" y1="{dy + 12:g}" x2="{MW - x}" y2="{dy + 12:g}" stroke="{T["line2"]}" stroke-dasharray="2 6"/>'
+    body = "\n".join([panel(MW, height), top, divider, bottom])
+    title = "Tools and methods. Compute: " + ", ".join(COMPUTE) + ". Validate: " + ", ".join(VALIDATE) + "."
+    return document(MW, height, body, title)
+
+
 def build(out_dir) -> list[str]:
     from theme import write
 
     write(f"{out_dir}/stack.svg", build_svg())
-    return ["stack.svg"]
+    write(f"{out_dir}/m/stack.svg", build_mobile_svg())
+    return ["stack.svg", "m/stack.svg"]

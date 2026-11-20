@@ -37,6 +37,7 @@ MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mo
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"
 
 W = 880                 # full-width graphics
+MW = 440                # narrow-screen variants (served through <picture> below 640 px)
 MONO_ADVANCE = 0.62     # conservative glyph advance (em) used to size chips and rules
 
 

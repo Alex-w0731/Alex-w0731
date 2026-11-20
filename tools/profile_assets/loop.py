@@ -1,7 +1,7 @@
 """The research loop: observe -> model -> perturb -> validate, and back with new questions."""
 from __future__ import annotations
 
-from theme import T, W, document, panel, text
+from theme import MW, T, W, document, panel, text
 
 H = 236
 Y = 96          # node centre line
@@ -97,8 +97,50 @@ def build_svg() -> str:
     return document(W, H, "\n".join(parts), title)
 
 
+def build_mobile_svg() -> str:
+    """Narrow-screen layout: the four stages stacked, with the return path on the left."""
+    h, x, r, y0, step = 404, 66, 26, 88, 78
+    ys = [y0 + i * step for i in range(len(STAGES))]
+    parts = [panel(MW, h)]
+    parts.append("  " + text(26, 36, "RESEARCH LOOP", size=12, cls="mono low caps"))
+    for i in range(len(ys) - 1):
+        c = T[STAGES[i][2]]
+        ya, yb = ys[i] + r + 9, ys[i + 1] - r - 9
+        parts.append(
+            f'  <line x1="{x}" y1="{ya}" x2="{x}" y2="{yb}" stroke="{c}" stroke-width="1.8" class="flow" stroke-linecap="round"/>'
+            f'<path d="M{x - 5} {yb - 6}l5 6l5 -6" fill="none" stroke="{c}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+        )
+    # return path: last stage -> first stage along the left edge
+    yb, xl = ys[-1] + r + 26, 22
+    ret = f"M{x} {ys[-1] + r + 9}V{yb - 8}a8 8 0 0 1 -8 8H{xl + 8}a8 8 0 0 1 -8 -8V{ys[0] + 8}a8 8 0 0 1 8 -8H{x - r - 10}"
+    parts.append(
+        f'  <path d="{ret}" fill="none" stroke="{T["line2"]}" stroke-width="1"/>'
+        f'<path d="{ret}" fill="none" stroke="{T["violet"]}" stroke-width="1.4" class="flow-slow" stroke-linecap="round" opacity=".9"/>'
+        f'<path d="M{x - r - 16} {ys[0] - 5}l6 5l-6 5" fill="none" stroke="{T["violet"]}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
+        + text(x + 22, yb + 4, "NEW QUESTIONS", size=11, cls="mono vi caps")
+    )
+    for i, (name, caption, color) in enumerate(STAGES):
+        c, cy = T[color], ys[i]
+        halo = "haloM" if color == "magenta" else "halo"
+        delay = f' style="animation-delay:{i * 0.8:g}s"'
+        parts.append(
+            f'  <circle cx="{x}" cy="{cy}" r="{r * 1.8:g}" fill="url(#{halo})" class="breathe"{delay}/>'
+            f'<circle cx="{x}" cy="{cy}" r="{r}" fill="{T["bg2"]}" stroke="{c}" stroke-width="1.5"/>'
+            + _icon(name, x, cy, c)
+        )
+        parts.append(
+            "  "
+            + text(x + 46, cy - 3, name, size=17, cls="mono b caps", extra=f' fill="{c}"')
+            + text(x + 46, cy + 19, caption, size=15, cls="sans mid")
+            + text(MW - 26, cy - 3, f"0{i + 1}", size=12, cls="mono low", anchor="end")
+        )
+    title = "Research loop: observe tumor and clinical data, model single-cell and spatial patterns, perturb with functional genomics, validate mechanisms and targets, then return with new questions."
+    return document(MW, h, "\n".join(parts), title)
+
+
 def build(out_dir) -> list[str]:
     from theme import write
 
     write(f"{out_dir}/loop.svg", build_svg())
-    return ["loop.svg"]
+    write(f"{out_dir}/m/loop.svg", build_mobile_svg())
+    return ["loop.svg", "m/loop.svg"]

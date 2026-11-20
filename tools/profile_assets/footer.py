@@ -1,14 +1,16 @@
 """Footer signal trace: a quiet line with one travelling pulse."""
 from __future__ import annotations
 
-from theme import T, W, document, text
+from theme import MW, T, W, document, text
 
 H = 72
 
 
-def build_svg() -> str:
+def build_svg(mobile: bool = False) -> str:
     y = 40
-    blip = f"M24 {y}H330l10 -4l8 4l10 0l7 -22l9 40l8 -26l7 8h12l9 -5l9 5H{W - 24}"
+    W = MW if mobile else globals()["W"]
+    lead = 150 if mobile else 330
+    blip = f"M24 {y}H{lead}l10 -4l8 4l10 0l7 -22l9 40l8 -26l7 8h12l9 -5l9 5H{W - 24}"
     body = (
         f'  <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="url(#bg)" stroke="{T["line2"]}"/>\n'
         f'  <rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="12" fill="url(#dots)" opacity=".45"/>\n'
@@ -30,4 +32,5 @@ def build(out_dir) -> list[str]:
     from theme import write
 
     write(f"{out_dir}/footer.svg", build_svg())
-    return ["footer.svg"]
+    write(f"{out_dir}/m/footer.svg", build_svg(mobile=True))
+    return ["footer.svg", "m/footer.svg"]

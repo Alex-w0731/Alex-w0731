@@ -35,7 +35,8 @@ def generate(out_dir: Path) -> list[str]:
 
 def contact_sheet(names: list[str], prefix: str) -> str:
     rows = "".join(
-        f'<figure><img src="{prefix}{n}" alt="{n}"><figcaption>{n}</figcaption></figure>' for n in names
+        f'<figure><img src="{prefix}{n}" alt="{n}"{" width=343" if n.startswith("m/") else ""}><figcaption>{n}</figcaption></figure>'
+        for n in names
     )
     return (
         "<!doctype html><meta charset='utf-8'><title>profile assets</title><style>"

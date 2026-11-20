@@ -23,13 +23,13 @@
 
 <a name="research-focus"></a>
 
-<p><img src="assets/hud/sec-focus.svg" width="100%" alt="01 / Research focus" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-focus.svg" /><img src="assets/hud/sec-focus.svg" width="100%" alt="01 / Research focus" /></picture></p>
 
 Hi, I'm **Alex Wang**. I connect experiments and computation to **identify and validate therapeutic targets in cancer**.
 
 My work spans tumor omics, single-cell and spatial analysis, functional genomics, and in vivo models. I also have experience in **DNA nanomedicine and targeted drug delivery**. My recent open-source work looks at the **tumor immune microenvironment**: a transparent profiling toolkit for bulk transcriptomes.
 
-<p><img src="assets/hud/loop.svg" width="100%" alt="Research loop: observe tumor and clinical data → model single-cell and spatial patterns → perturb with functional genomics → validate mechanisms and targets → return with new questions." /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/loop.svg" /><img src="assets/hud/loop.svg" width="100%" alt="Research loop: observe tumor and clinical data → model single-cell and spatial patterns → perturb with functional genomics → validate mechanisms and targets → return with new questions." /></picture></p>
 
 <details>
 <summary><b>The questions behind the work</b></summary>
@@ -45,9 +45,9 @@ I enjoy the space where an unexpected pattern becomes a testable question—and 
 
 <a name="open-tools"></a>
 
-<p><img src="assets/hud/sec-build.svg" width="100%" alt="02 / Open tools" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-build.svg" /><img src="assets/hud/sec-build.svg" width="100%" alt="02 / Open tools" /></picture></p>
 
-<p><a href="https://github.com/Alex-w0731/tmelens"><img src="assets/hud/feat-tmelens.svg" width="100%" alt="tmelens: look inside the tumour immune microenvironment from a bulk expression matrix. Signature scoring, hot / excluded / cold phenotypes, deconvolution, survival, ICB response." /></a></p>
+<p><a href="https://github.com/Alex-w0731/tmelens"><picture><source media="(max-width: 640px)" srcset="assets/hud/m/feat-tmelens.svg" /><img src="assets/hud/feat-tmelens.svg" width="100%" alt="tmelens: look inside the tumour immune microenvironment from a bulk expression matrix. Signature scoring, hot / excluded / cold phenotypes, deconvolution, survival, ICB response." /></picture></a></p>
 
 **[tmelens ↗](https://github.com/Alex-w0731/tmelens)** — a transparent Python toolkit to profile the tumour immune microenvironment from bulk transcriptomes: signature scoring, immune phenotypes, deconvolution, survival statistics checked against R, and immunotherapy-response analysis, with a single-file HTML report.
 
@@ -57,7 +57,7 @@ pip install git+https://github.com/Alex-w0731/tmelens.git
 
 <a name="selected-work"></a>
 
-<p><img src="assets/hud/sec-work.svg" width="100%" alt="03 / Selected work" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-work.svg" /><img src="assets/hud/sec-work.svg" width="100%" alt="03 / Selected work" /></picture></p>
 
 **From a biological question to an inspectable analysis.** Six starting points from the lab.
 
@@ -146,9 +146,9 @@ For real TIFFs, the [QC tool](research/3d-imaging/scripts/inspect_tiff.py) check
 
 <a name="tools-and-methods"></a>
 
-<p><img src="assets/hud/sec-stack.svg" width="100%" alt="04 / Tools &amp; methods" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-stack.svg" /><img src="assets/hud/sec-stack.svg" width="100%" alt="04 / Tools &amp; methods" /></picture></p>
 
-<p><img src="assets/hud/stack.svg" width="100%" alt="Compute: R, Python, Seurat, Scanpy, CellChat, CytoTRACE2, Palantir, pySCENIC, bulk RNA-seq, scRNA-seq, ChIP-seq, survival analysis, pathway enrichment. Validate: CRISPR-Cas9 screens, qRT-PCR, Western blot, Co-IP, flow cytometry, cell culture, xenograft models, H&amp;E, IHC, IF, confocal microscopy, pathology-image analysis." /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/stack.svg" /><img src="assets/hud/stack.svg" width="100%" alt="Compute: R, Python, Seurat, Scanpy, CellChat, CytoTRACE2, Palantir, pySCENIC, bulk RNA-seq, scRNA-seq, ChIP-seq, survival analysis, pathway enrichment. Validate: CRISPR-Cas9 screens, qRT-PCR, Western blot, Co-IP, flow cytometry, cell culture, xenograft models, H&amp;E, IHC, IF, confocal microscopy, pathology-image analysis." /></picture></p>
 
 <details>
 <summary><b>Computational toolkit</b></summary>
@@ -166,9 +166,9 @@ Genome-wide CRISPR-Cas9 screening · qRT-PCR · Western blotting · Co-IP · flo
 
 <a name="research-radar"></a>
 
-<p><img src="assets/hud/sec-radar.svg" width="100%" alt="05 / Research radar" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-radar.svg" /><img src="assets/hud/sec-radar.svg" width="100%" alt="05 / Research radar" /></picture></p>
 
-<p><a href="research/README.md"><img src="assets/hud/radar.svg" width="100%" alt="Research radar: five directions from questions to methods across spatial context, cell states, perturbation, delivery and morphology, drawn from a catalogue of 97 public resources." /></a></p>
+<p><a href="research/README.md"><picture><source media="(max-width: 640px)" srcset="assets/hud/m/radar.svg" /><img src="assets/hud/radar.svg" width="100%" alt="Research radar: five directions from questions to methods across spatial context, cell states, perturbation, delivery and morphology, drawn from a catalogue of 97 public resources." /></picture></a></p>
 
 A curated map of **97 public GitHub resources** for experimental and computational cancer research.
 
@@ -191,7 +191,7 @@ A curated map of **97 public GitHub resources** for experimental and computation
 
 <a name="selected-publications"></a>
 
-<p><img src="assets/hud/sec-pubs.svg" width="100%" alt="06 / Selected publications" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-pubs.svg" /><img src="assets/hud/sec-pubs.svg" width="100%" alt="06 / Selected publications" /></picture></p>
 
 **2025 · Cell & Bioscience**<br />
 [**KDM6B inhibition enhances chemotherapeutic response in small cell lung cancer via epigenetic regulation of apoptosis and ferroptosis. ↗**](https://doi.org/10.1186/s13578-025-01496-6)<br />
@@ -207,7 +207,7 @@ A curated map of **97 public GitHub resources** for experimental and computation
 
 <sub>* Co-first authors.</sub>
 
-<p><img src="assets/hud/footer.svg" width="100%" alt="" /></p>
+<p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/footer.svg" /><img src="assets/hud/footer.svg" width="100%" alt="" /></picture></p>
 
 <p align="center">
   <b>Rigorous science. Reproducible code. Room for playful ideas.</b><br />
