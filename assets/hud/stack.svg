@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="880" height="260" role="img" aria-label="Tools and methods. Compute: R, Python, Seurat, Scanpy, CellChat, CytoTRACE2, Palantir, pySCENIC, bulk RNA-seq, scRNA-seq, ChIP-seq, survival analysis, pathway enrichment. Validate: CRISPR-Cas9 screens, qRT-PCR, Western blot, Co-IP, flow cytometry, cell culture, xenograft models, H&amp;E · IHC · IF, confocal microscopy, pathology-image analysis.">
+  <title>Tools and methods. Compute: R, Python, Seurat, Scanpy, CellChat, CytoTRACE2, Palantir, pySCENIC, bulk RNA-seq, scRNA-seq, ChIP-seq, survival analysis, pathway enrichment. Validate: CRISPR-Cas9 screens, qRT-PCR, Western blot, Co-IP, flow cytometry, cell culture, xenograft models, H&amp;E · IHC · IF, confocal microscopy, pathology-image analysis.</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070b16"/><stop offset="1" stop-color="#0b1222"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ce8ff"/><stop offset=".55" stop-color="#a78bfa"/><stop offset="1" stop-color="#ff5cb8"/>
+    </linearGradient>
+    <linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ce8ff" stop-opacity=".9"/><stop offset="1" stop-color="#2ce8ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#2ce8ff" stop-opacity=".35"/><stop offset="1" stop-color="#2ce8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloM" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ff5cb8" stop-opacity=".32"/><stop offset="1" stop-color="#ff5cb8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#18233a" stroke-width="1" opacity=".55"/>
+    </pattern>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#24365a" opacity=".7"/>
+    </pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+    .hi { fill: #eaf2ff; } .mid { fill: #a3b3cc; } .low { fill: #62748f; }
+    .cy { fill: #2ce8ff; } .cy2 { fill: #9ff4ff; } .mg { fill: #ff5cb8; }
+    .vi { fill: #a78bfa; } .am { fill: #fbbf24; } .gr { fill: #34d399; } .bl { fill: #60a5fa; }
+    .caps { letter-spacing: 0.16em; }
+    .tight { letter-spacing: 0.04em; }
+    .b { font-weight: 700; } .sb { font-weight: 600; }
+    .s-cy { stroke: #2ce8ff; } .s-mg { stroke: #ff5cb8; } .s-vi { stroke: #a78bfa; }
+    .s-line { stroke: #18233a; } .s-line2 { stroke: #24365a; } .s-low { stroke: #62748f; }
+    .nf { fill: none; }
+    @keyframes pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+    @keyframes breathe { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+    @keyframes dash { to { stroke-dashoffset: -64; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinr { to { transform: rotate(-360deg); } }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; }
+    .breathe { animation: breathe 4.8s ease-in-out infinite; }
+    .blink { animation: blink 1.2s steps(1) infinite; }
+    .flow { stroke-dasharray: 6 10; animation: dash 2.4s linear infinite; }
+    .flow-slow { stroke-dasharray: 2 14; animation: dash 5s linear infinite; }
+    .spin { transform-box: fill-box; transform-origin: center; animation: spin 24s linear infinite; }
+    .spinr { transform-box: fill-box; transform-origin: center; animation: spinr 36s linear infinite; }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <rect x=".5" y=".5" width="879" height="259" rx="14" fill="url(#bg)" stroke="#24365a"/>
+  <rect x="1" y="1" width="878" height="258" rx="14" fill="url(#grid)"/>
+  <g fill="none" stroke="#2ce8ff" stroke-width="1.4" stroke-linecap="round" opacity=".75"><path d="M9 25V14a5 5 0 0 1 5-5H25" /><path d="M855 9H866a5 5 0 0 1 5 5V25" /><path d="M871 235V246a5 5 0 0 1-5 5H855" /><path d="M25 251H14a5 5 0 0 1-5-5V235" /></g>
+  <rect x="30" y="30" width="30" height="30" rx="8" fill="#2ce8ff" fill-opacity=".12" stroke="#2ce8ff" stroke-opacity=".7"/><path d="M39 39l6 6l-6 6M47 52h6" fill="none" stroke="#2ce8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="72" y="44" font-size="15" class="mono b caps" fill="#2ce8ff">COMPUTE</text>
+  <text x="72" y="61" font-size="12.5" class="sans mid">tumor omics, cell states, reproducible analysis</text>
+  <g><rect x="30" y="80" width="28.0" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="44.0" y="96.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">R</text></g>
+  <g><rect x="66.04" y="80" width="68.2" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="100.2" y="96.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">Python</text></g>
+  <g><rect x="142.28" y="80" width="68.2" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="176.4" y="96.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">Seurat</text></g>
+  <g><rect x="218.52" y="80" width="68.2" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="252.6" y="96.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">Scanpy</text></g>
+  <g><rect x="294.76" y="80" width="84.3" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="336.9" y="96.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">CellChat</text></g>
+  <g><rect x="30" y="112" width="100.4" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="80.2" y="128.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">CytoTRACE2</text></g>
+  <g><rect x="138.4" y="112" width="84.3" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="180.6" y="128.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">Palantir</text></g>
+  <g><rect x="230.72" y="112" width="84.3" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="272.9" y="128.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">pySCENIC</text></g>
+  <g><rect x="30" y="144" width="116.5" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="88.2" y="160.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">bulk RNA-seq</text></g>
+  <g><rect x="154.48" y="144" width="92.4" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="200.7" y="160.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">scRNA-seq</text></g>
+  <g><rect x="254.84" y="144" width="84.3" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="297.0" y="160.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">ChIP-seq</text></g>
+  <g><rect x="30" y="176" width="156.7" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="108.3" y="192.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">survival analysis</text></g>
+  <g><rect x="194.68" y="176" width="164.7" height="24" rx="12" fill="none" stroke="#2ce8ff" stroke-opacity=".55"/><text x="277.0" y="192.3" font-size="12" class="mono" fill="#2ce8ff" text-anchor="middle" letter-spacing=".6">pathway enrichment</text></g>
+  <line x1="440.0" y1="30" x2="440.0" y2="232" stroke="#24365a" stroke-dasharray="2 6"/>
+  <rect x="458" y="30" width="30" height="30" rx="8" fill="#ff5cb8" fill-opacity=".12" stroke="#ff5cb8" stroke-opacity=".7"/><path d="M470 37h6M471 37v6l-5 9a1.6 1.6 0 0 0 1.4 2.4h11.2a1.6 1.6 0 0 0 1.4-2.4l-5-9v-6" fill="none" stroke="#ff5cb8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="500" y="44" font-size="15" class="mono b caps" fill="#ff5cb8">VALIDATE</text>
+  <text x="500" y="61" font-size="12.5" class="sans mid">functional genomics, tumor models, quantitative imaging</text>
+  <g><rect x="458" y="80" width="172.8" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="544.4" y="96.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">CRISPR-Cas9 screens</text></g>
+  <g><rect x="638.76" y="80" width="76.3" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="676.9" y="96.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">qRT-PCR</text></g>
+  <g><rect x="723.04" y="80" width="116.5" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="781.3" y="96.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">Western blot</text></g>
+  <g><rect x="458" y="112" width="60.2" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="488.1" y="128.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">Co-IP</text></g>
+  <g><rect x="526.2" y="112" width="132.6" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="592.5" y="128.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">flow cytometry</text></g>
+  <g><rect x="666.76" y="112" width="116.5" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="725.0" y="128.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">cell culture</text></g>
+  <g><rect x="458" y="144" width="148.6" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="532.3" y="160.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">xenograft models</text></g>
+  <g><rect x="614.64" y="144" width="132.6" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="680.9" y="160.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">H&amp;E · IHC · IF</text></g>
+  <g><rect x="458" y="176" width="172.8" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="544.4" y="192.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">confocal microscopy</text></g>
+  <g><rect x="458" y="208" width="213.0" height="24" rx="12" fill="none" stroke="#ff5cb8" stroke-opacity=".55"/><text x="564.5" y="224.3" font-size="12" class="mono" fill="#ff5cb8" text-anchor="middle" letter-spacing=".6">pathology-image analysis</text></g>
+</svg>

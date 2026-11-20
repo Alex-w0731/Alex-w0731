@@ -1,35 +1,35 @@
+<a name="top"></a>
+
 <p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/curiosity-lab-poster.png" />
-    <img src="assets/curiosity-lab.gif" width="100%" alt="Alex Wang — The Curiosity Lab. Curiosity, with a spark. Animated Killua scientist fan art with a glowing flask, orbiting electrons and electric sparks. Cancer biology × code." />
-  </picture>
+  <img src="assets/hud/hero.svg" width="100%" alt="Alex Wang. Experimental × computational cancer research: tumor immunology, functional genomics, single-cell and spatial omics. An animated mission-control view scanning a schematic tumor microenvironment." />
 </p>
 
 <p align="center">
-  <b>Experimental × computational cancer research</b><br />
-  <sub>Molecular mechanisms · Tumor omics · Functional validation</sub>
-</p>
-
-<p align="center">
-  <a href="mailto:Alexw0731@icloud.com"><img src="assets/contact-electric.svg" height="32" alt="Email Alex — let's exchange ideas" /></a>
+  <a href="mailto:Alexw0731@icloud.com"><img src="assets/hud/btn-email.svg" height="36" alt="Email Alex: exchange ideas" /></a>
   &nbsp;
-  <a href="https://orcid.org/0009-0005-8480-5387"><img src="assets/orcid-electric.svg" height="32" alt="ORCID 0009-0005-8480-5387" /></a>
+  <a href="https://orcid.org/0009-0005-8480-5387"><img src="assets/hud/btn-orcid.svg" height="36" alt="ORCID 0009-0005-8480-5387" /></a>
+  &nbsp;
+  <a href="https://github.com/Alex-w0731/tmelens"><img src="assets/hud/btn-tmelens.svg" height="36" alt="tmelens toolkit" /></a>
 </p>
 
 <p align="center">
   <a href="#research-focus">Research focus</a> &nbsp;·&nbsp;
+  <a href="#open-tools">Open tools</a> &nbsp;·&nbsp;
   <a href="#selected-work">Selected work</a> &nbsp;·&nbsp;
-  <a href="#3d-microscopy">3D workflow</a> &nbsp;·&nbsp;
+  <a href="#tools-and-methods">Tools &amp; methods</a> &nbsp;·&nbsp;
+  <a href="#research-radar">Research radar</a> &nbsp;·&nbsp;
   <a href="#selected-publications">Publications</a>
 </p>
 
-## Research focus
+<a name="research-focus"></a>
+
+<p><img src="assets/hud/sec-focus.svg" width="100%" alt="01 / Research focus" /></p>
 
 Hi, I'm **Alex Wang**. I connect experiments and computation to **identify and validate therapeutic targets in cancer**.
 
-My work spans tumor omics, single-cell and spatial analysis, functional genomics, and in vivo models. I also have experience in **DNA nanomedicine and targeted drug delivery**.
+My work spans tumor omics, single-cell and spatial analysis, functional genomics, and in vivo models. I also have experience in **DNA nanomedicine and targeted drug delivery**. My recent open-source work looks at the **tumor immune microenvironment**: a transparent profiling toolkit for bulk transcriptomes.
 
-<p><img src="assets/research-loop.svg" width="100%" alt="Observe tumor and clinical data → model single-cell and spatial patterns → perturb with functional genomics → validate mechanisms and targets." /></p>
+<p><img src="assets/hud/loop.svg" width="100%" alt="Research loop: observe tumor and clinical data → model single-cell and spatial patterns → perturb with functional genomics → validate mechanisms and targets → return with new questions." /></p>
 
 <details>
 <summary><b>The questions behind the work</b></summary>
@@ -43,20 +43,34 @@ I enjoy the space where an unexpected pattern becomes a testable question—and 
 
 </details>
 
-## Selected work
+<a name="open-tools"></a>
+
+<p><img src="assets/hud/sec-build.svg" width="100%" alt="02 / Open tools" /></p>
+
+<p><a href="https://github.com/Alex-w0731/tmelens"><img src="assets/hud/feat-tmelens.svg" width="100%" alt="tmelens: look inside the tumour immune microenvironment from a bulk expression matrix. Signature scoring, hot / excluded / cold phenotypes, deconvolution, survival, ICB response." /></a></p>
+
+**[tmelens ↗](https://github.com/Alex-w0731/tmelens)** — a transparent Python toolkit to profile the tumour immune microenvironment from bulk transcriptomes: signature scoring, immune phenotypes, deconvolution, survival statistics checked against R, and immunotherapy-response analysis, with a single-file HTML report.
+
+```bash
+pip install git+https://github.com/Alex-w0731/tmelens.git
+```
+
+<a name="selected-work"></a>
+
+<p><img src="assets/hud/sec-work.svg" width="100%" alt="03 / Selected work" /></p>
 
 **From a biological question to an inspectable analysis.** Six starting points from the lab.
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/Alex-w0731/breast-cancer-multiomics"><img src="assets/project-multiomics.svg" width="100%" alt="01 / Multiomics — connected layers" /></a>
+      <a href="https://github.com/Alex-w0731/breast-cancer-multiomics"><img src="assets/hud/card-multiomics.svg" width="100%" alt="01 / Multiomics — connected layers" /></a>
       <h3><a href="https://github.com/Alex-w0731/breast-cancer-multiomics">Breast cancer multiomics ↗</a></h3>
       <p>Integrate single-cell, spatial and bulk RNA-seq with patient-aware analysis and synthetic checks.</p>
       <p><code>Python</code> <code>Multiomics</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/Alex-w0731/multiscale-tumor-transcriptomics"><img src="assets/project-multiscale.svg" width="100%" alt="02 / Multiscale — from cells to tissue" /></a>
+      <a href="https://github.com/Alex-w0731/multiscale-tumor-transcriptomics"><img src="assets/hud/card-multiscale.svg" width="100%" alt="02 / Multiscale — from cells to tissue to cohort" /></a>
       <h3><a href="https://github.com/Alex-w0731/multiscale-tumor-transcriptomics">Multiscale tumor transcriptomics ↗</a></h3>
       <p>Connect cell states to tissue context through deconvolution, spatial analysis and joint NMF.</p>
       <p><code>R</code> <code>Transcriptomics</code></p>
@@ -64,13 +78,13 @@ I enjoy the space where an unexpected pattern becomes a testable question—and 
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/Alex-w0731/tcga-luad-survival-analysis"><img src="assets/project-survival.svg" width="100%" alt="03 / Clinical signals — expression and outcome" /></a>
+      <a href="https://github.com/Alex-w0731/tcga-luad-survival-analysis"><img src="assets/hud/card-survival.svg" width="100%" alt="03 / Clinical signals — expression and outcome" /></a>
       <h3><a href="https://github.com/Alex-w0731/tcga-luad-survival-analysis">TCGA-LUAD survival analysis ↗</a></h3>
       <p>Retrieve cBioPortal cohorts, model survival and report Cox estimates with FDR correction.</p>
       <p><code>R</code> <code>Survival analysis</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="https://github.com/Alex-w0731/single-cell-melanoma-analysis"><img src="assets/project-singlecell.svg" width="100%" alt="04 / Single cell — cellular heterogeneity" /></a>
+      <a href="https://github.com/Alex-w0731/single-cell-melanoma-analysis"><img src="assets/hud/card-singlecell.svg" width="100%" alt="04 / Single cell — cellular heterogeneity" /></a>
       <h3><a href="https://github.com/Alex-w0731/single-cell-melanoma-analysis">Single-cell melanoma analysis ↗</a></h3>
       <p>Explore GSE72056 with Scanpy, from memory-conscious preprocessing to clustering and markers.</p>
       <p><code>Python</code> <code>Scanpy</code></p>
@@ -78,13 +92,13 @@ I enjoy the space where an unexpected pattern becomes a testable question—and 
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <a href="https://github.com/Alex-w0731/breast-cancer-multiomics/tree/main/modules/crispr-screen"><img src="assets/project-crispr.svg" width="100%" alt="05 / CRISPR — perturbation to evidence" /></a>
+      <a href="https://github.com/Alex-w0731/breast-cancer-multiomics/tree/main/modules/crispr-screen"><img src="assets/hud/card-crispr.svg" width="100%" alt="05 / CRISPR screen — perturbation to evidence" /></a>
       <h3><a href="https://github.com/Alex-w0731/breast-cancer-multiomics/tree/main/modules/crispr-screen">CRISPR Screen Workbench ↗</a></h3>
       <p>Guide QC and MAGeCK RRA, plus separate SCLC/TNBC gene-summary audits and synthetic checks.</p>
       <p><code>Python</code> <code>MAGeCK</code></p>
     </td>
     <td width="50%" valign="top">
-      <a href="research/3d-imaging/README.en.md"><img src="assets/project-3d-imaging.svg" width="100%" alt="06 / AX / VOLUME — 3D microscopy, voxels to evidence" /></a>
+      <a href="research/3d-imaging/README.en.md"><img src="assets/hud/card-volume.svg" width="100%" alt="06 / AX / VOLUME — 3D microscopy, voxels to evidence" /></a>
       <h3><a href="research/3d-imaging/README.en.md">AX / VOLUME · 3D microscopy ↗</a></h3>
       <p>Plan calibrated 3D analysis, review orthogonal slices and export a reproducible run plan.</p>
       <p><code>Microscopy</code> <code>Research planner</code></p>
@@ -103,18 +117,16 @@ Guide-level quality control, MAGeCK RRA and separate contrasts across cell lines
 
 </details>
 
-## 3D microscopy
+<a name="3d-microscopy"></a>
+
+<details>
+<summary><b>AX / VOLUME: the 3D microscopy workflow, review gates and getting started</b></summary>
 
 **AX / VOLUME** connects physical calibration, candidate segmentation and human review with measurement in the original label space.
 
 [**Explore the workflow →**](research/3d-imaging/README.en.md) &nbsp;·&nbsp; [English workbench ↓](research/3d-imaging/workbench.en.html) &nbsp;·&nbsp; [中文工作台 ↓](research/3d-imaging/workbench.html)
 
 [English guide](research/3d-imaging/GUIDE.en.md) · [中文指南](research/3d-imaging/GUIDE.zh-CN.md) · [中文流程](research/3d-imaging/README.md) · [Sources & licenses](research/3d-imaging/SOURCES.en.md)
-
-<sub>Research planner + synthetic 3D demonstration. Real data, models and measurements require external tools and sample-specific validation.</sub>
-
-<details>
-<summary><b>Seven stages, review gates and getting started</b></summary>
 
 [![Seven stages from calibrated microscopy voxels to reproducible evidence](assets/workflow-3d-imaging.svg)](research/3d-imaging/README.en.md)
 
@@ -128,16 +140,15 @@ Download <code>workbench.en.html</code> for English or <code>workbench.html</cod
 
 For real TIFFs, the [QC tool](research/3d-imaging/scripts/inspect_tiff.py) checks axes, spacing, intensity limits and optional instance-label volumes. [Nine synthetic tests](research/3d-imaging/scripts/tests/test_inspect_tiff.py) verify the QC tool; they are not biological or model-validation results. The [execution guide](research/3d-imaging/GUIDE.en.md) connects OME-Zarr, BigStitcher or multiview-stitcher, Cellpose, napari and scientific rendering.
 
-The browser does not read real samples or run model inference. Sources checked 2 October 2026.
+<sub>Research planner + synthetic 3D demonstration. The browser does not read real samples or run model inference; real data, models and measurements require external tools and sample-specific validation. Sources checked 2 October 2026.</sub>
 
 </details>
 
-## Tools & methods
+<a name="tools-and-methods"></a>
 
-<p><img src="assets/toolkit-electric.svg" width="490" alt="R · Python · Seurat · Scanpy · CRISPR" /></p>
+<p><img src="assets/hud/sec-stack.svg" width="100%" alt="04 / Tools &amp; methods" /></p>
 
-**Compute** — tumor omics, cell states and reproducible analysis.<br />
-**Validate** — functional genomics, tumor models and quantitative imaging.
+<p><img src="assets/hud/stack.svg" width="100%" alt="Compute: R, Python, Seurat, Scanpy, CellChat, CytoTRACE2, Palantir, pySCENIC, bulk RNA-seq, scRNA-seq, ChIP-seq, survival analysis, pathway enrichment. Validate: CRISPR-Cas9 screens, qRT-PCR, Western blot, Co-IP, flow cytometry, cell culture, xenograft models, H&amp;E, IHC, IF, confocal microscopy, pathology-image analysis." /></p>
 
 <details>
 <summary><b>Computational toolkit</b></summary>
@@ -153,9 +164,11 @@ Genome-wide CRISPR-Cas9 screening · qRT-PCR · Western blotting · Co-IP · flo
 
 </details>
 
-## Research radar
+<a name="research-radar"></a>
 
-[![Research radar — questions to methods across spatial context, cell states, perturbation, delivery and morphology](assets/research-radar.svg)](research/README.md)
+<p><img src="assets/hud/sec-radar.svg" width="100%" alt="05 / Research radar" /></p>
+
+<p><a href="research/README.md"><img src="assets/hud/radar.svg" width="100%" alt="Research radar: five directions from questions to methods across spatial context, cell states, perturbation, delivery and morphology, drawn from a catalogue of 97 public resources." /></a></p>
 
 A curated map of **97 public GitHub resources** for experimental and computational cancer research.
 
@@ -176,7 +189,9 @@ A curated map of **97 public GitHub resources** for experimental and computation
 
 <sub>A learning and evaluation roadmap with data requirements, validation steps and stopping conditions. Inclusion does not imply that I have used or validated every tool. [Sources & license notes](research/SOURCES.md) · Checked 26 September 2026.</sub>
 
-## Selected publications
+<a name="selected-publications"></a>
+
+<p><img src="assets/hud/sec-pubs.svg" width="100%" alt="06 / Selected publications" /></p>
 
 **2025 · Cell & Bioscience**<br />
 [**KDM6B inhibition enhances chemotherapeutic response in small cell lung cancer via epigenetic regulation of apoptosis and ferroptosis. ↗**](https://doi.org/10.1186/s13578-025-01496-6)<br />
@@ -192,11 +207,22 @@ A curated map of **97 public GitHub resources** for experimental and computation
 
 <sub>* Co-first authors.</sub>
 
-<p align="center"><img src="assets/circuit-divider.svg" width="100%" alt="" /></p>
+<p><img src="assets/hud/footer.svg" width="100%" alt="" /></p>
 
 <p align="center">
   <b>Rigorous science. Reproducible code. Room for playful ideas.</b><br />
   <sub>认真探索，也保持好玩。 ⚡</sub><br /><br />
-  <a href="mailto:Alexw0731@icloud.com">Let's exchange ideas</a> &nbsp;·&nbsp; <a href="https://orcid.org/0009-0005-8480-5387">ORCID</a><br />
-  <sub>Lab partner: Killua · <a href="assets/CREDITS.md">Artwork & credits</a> · <a href="motion/index.html">How it's made</a></sub>
+  <a href="mailto:Alexw0731@icloud.com">Let's exchange ideas</a> &nbsp;·&nbsp; <a href="https://orcid.org/0009-0005-8480-5387">ORCID</a> &nbsp;·&nbsp; <a href="#top">Back to top ↑</a>
 </p>
+
+<details>
+<summary><sub>⚡ Lab partner: Killua (open the Curiosity Lab)</sub></summary>
+<br />
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/curiosity-lab-poster.png" />
+    <img src="assets/curiosity-lab.gif" width="100%" alt="The Curiosity Lab. Curiosity, with a spark. Animated Killua scientist fan art with a glowing flask, orbiting electrons and electric sparks." />
+  </picture>
+</p>
+<p align="center"><sub><a href="assets/CREDITS.md">Artwork &amp; credits</a> · <a href="motion/index.html">How the animation is made</a> · Profile graphics are generated by <a href="tools/profile_assets/build.py">tools/profile_assets</a></sub></p>
+</details>

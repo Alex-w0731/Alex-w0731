@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 184" width="432" height="184" role="img" aria-label="02 / Multiscale: from cells to tissue to cohort">
+  <title>02 / Multiscale: from cells to tissue to cohort</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070b16"/><stop offset="1" stop-color="#0b1222"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ce8ff"/><stop offset=".55" stop-color="#a78bfa"/><stop offset="1" stop-color="#ff5cb8"/>
+    </linearGradient>
+    <linearGradient id="fadeR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2ce8ff" stop-opacity=".9"/><stop offset="1" stop-color="#2ce8ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#2ce8ff" stop-opacity=".35"/><stop offset="1" stop-color="#2ce8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloM" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ff5cb8" stop-opacity=".32"/><stop offset="1" stop-color="#ff5cb8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#18233a" stroke-width="1" opacity=".55"/>
+    </pattern>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#24365a" opacity=".7"/>
+    </pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+    .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+    .hi { fill: #eaf2ff; } .mid { fill: #a3b3cc; } .low { fill: #62748f; }
+    .cy { fill: #2ce8ff; } .cy2 { fill: #9ff4ff; } .mg { fill: #ff5cb8; }
+    .vi { fill: #a78bfa; } .am { fill: #fbbf24; } .gr { fill: #34d399; } .bl { fill: #60a5fa; }
+    .caps { letter-spacing: 0.16em; }
+    .tight { letter-spacing: 0.04em; }
+    .b { font-weight: 700; } .sb { font-weight: 600; }
+    .s-cy { stroke: #2ce8ff; } .s-mg { stroke: #ff5cb8; } .s-vi { stroke: #a78bfa; }
+    .s-line { stroke: #18233a; } .s-line2 { stroke: #24365a; } .s-low { stroke: #62748f; }
+    .nf { fill: none; }
+    @keyframes pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+    @keyframes breathe { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+    @keyframes dash { to { stroke-dashoffset: -64; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spinr { to { transform: rotate(-360deg); } }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; }
+    .breathe { animation: breathe 4.8s ease-in-out infinite; }
+    .blink { animation: blink 1.2s steps(1) infinite; }
+    .flow { stroke-dasharray: 6 10; animation: dash 2.4s linear infinite; }
+    .flow-slow { stroke-dasharray: 2 14; animation: dash 5s linear infinite; }
+    .spin { transform-box: fill-box; transform-origin: center; animation: spin 24s linear infinite; }
+    .spinr { transform-box: fill-box; transform-origin: center; animation: spinr 36s linear infinite; }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <rect x=".5" y=".5" width="431" height="183" rx="12" fill="url(#bg)" stroke="#24365a"/>
+  <rect x="1" y="1" width="430" height="182" rx="12" fill="url(#grid)"/>
+  <g fill="none" stroke="#a78bfa" stroke-width="1.4" stroke-linecap="round" opacity=".75"><path d="M9 25V14a5 5 0 0 1 5-5H25" /><path d="M407 9H418a5 5 0 0 1 5 5V25" /><path d="M423 159V170a5 5 0 0 1-5 5H407" /><path d="M25 175H14a5 5 0 0 1-5-5V159" /></g>
+  <text x="26" y="36" font-size="14" class="mono b" fill="#a78bfa" letter-spacing="1.2">02</text><text x="52" y="36" font-size="14" class="mono low">/</text><text x="68" y="36" font-size="12.5" class="mono mid caps">MULTISCALE</text>
+  <rect x="380.6" y="22" width="25.4" height="20" rx="10" fill="none" stroke="#24365a"/><text x="393.3" y="36" font-size="10.5" class="mono low caps" text-anchor="middle">R</text>
+  <circle cx="44" cy="70" r="5" fill="#2ce8ff" fill-opacity=".2" stroke="#2ce8ff" stroke-width="1.2"/><circle cx="58" cy="92" r="5" fill="#a78bfa" fill-opacity=".2" stroke="#a78bfa" stroke-width="1.2"/><circle cx="72" cy="64" r="5" fill="#ff5cb8" fill-opacity=".2" stroke="#ff5cb8" stroke-width="1.2"/><circle cx="80" cy="104" r="5" fill="#2ce8ff" fill-opacity=".2" stroke="#2ce8ff" stroke-width="1.2"/><circle cx="94" cy="82" r="5" fill="#34d399" fill-opacity=".2" stroke="#34d399" stroke-width="1.2"/><circle cx="52" cy="112" r="5" fill="#a78bfa" fill-opacity=".2" stroke="#a78bfa" stroke-width="1.2"/><circle cx="100" cy="60" r="5" fill="#2ce8ff" fill-opacity=".2" stroke="#2ce8ff" stroke-width="1.2"/><circle cx="106" cy="108" r="5" fill="#ff5cb8" fill-opacity=".2" stroke="#ff5cb8" stroke-width="1.2"/><text x="74" y="138" font-size="10.5" class="mono low caps" text-anchor="middle">CELLS</text><circle cx="176" cy="62" r="5.2" fill="#ff5cb8" fill-opacity=".35"/><circle cx="192" cy="62" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="208" cy="62" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="224" cy="62" r="5.2" fill="#ff5cb8" fill-opacity=".85"/><circle cx="240" cy="62" r="5.2" fill="#2ce8ff" fill-opacity=".35"/><circle cx="184" cy="76" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="200" cy="76" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="216" cy="76" r="5.2" fill="#ff5cb8" fill-opacity=".85"/><circle cx="232" cy="76" r="5.2" fill="#2ce8ff" fill-opacity=".35"/><circle cx="248" cy="76" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="176" cy="90" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="192" cy="90" r="5.2" fill="#ff5cb8" fill-opacity=".85"/><circle cx="208" cy="90" r="5.2" fill="#2ce8ff" fill-opacity=".35"/><circle cx="224" cy="90" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="240" cy="90" r="5.2" fill="#ff5cb8" fill-opacity=".85"/><circle cx="184" cy="104" r="5.2" fill="#ff5cb8" fill-opacity=".85"/><circle cx="200" cy="104" r="5.2" fill="#2ce8ff" fill-opacity=".35"/><circle cx="216" cy="104" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><circle cx="232" cy="104" r="5.2" fill="#ff5cb8" fill-opacity=".85"/><circle cx="248" cy="104" r="5.2" fill="#2ce8ff" fill-opacity=".85"/><text x="212" y="138" font-size="10.5" class="mono low caps" text-anchor="middle">TISSUE</text><rect x="310" y="82" width="9" height="30" rx="2" fill="#a78bfa" fill-opacity=".75"/><rect x="325" y="66" width="9" height="46" rx="2" fill="#a78bfa" fill-opacity=".75"/><rect x="340" y="90" width="9" height="22" rx="2" fill="#a78bfa" fill-opacity=".75"/><rect x="355" y="60" width="9" height="52" rx="2" fill="#a78bfa" fill-opacity=".75"/><rect x="370" y="74" width="9" height="38" rx="2" fill="#a78bfa" fill-opacity=".75"/><rect x="385" y="84" width="9" height="28" rx="2" fill="#a78bfa" fill-opacity=".75"/><line x1="304" y1="112.5" x2="402" y2="112.5" stroke="#24365a"/><text x="353" y="138" font-size="10.5" class="mono low caps" text-anchor="middle">COHORT</text><path d="M130 86h18m-6 -5l6 5l-6 5" fill="none" stroke="#62748f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M272 86h18m-6 -5l6 5l-6 5" fill="none" stroke="#62748f" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="26" y="162" font-size="11.5" class="mono low caps">FROM CELLS TO TISSUE TO COHORT</text>
+  <rect x="372" y="157" width="34" height="2" rx="1" fill="#a78bfa" class="pulse"/>
+</svg>
