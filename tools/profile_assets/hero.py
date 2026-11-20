@@ -241,7 +241,16 @@ CSS = """
 """
 
 
-def build_svg():
+def build_svg(mobile: bool = False):
+    # Layout: wide (text left, scan frame right) or narrow (text on top, scan frame below).
+    X0, LW = 44, 428           # left column origin and lock-up width (name, tagline, chips justify to it)
+    if mobile:
+        W, H = 440, 620
+        CX, CY = 220, 444
+        K = (W - 48) / LW      # the text lock-up is scaled to fit the narrow canvas
+    else:
+        W, H, CX, CY = globals()["W"], globals()["H"], globals()["CX"], globals()["CY"]
+        K = 1.0
     o = []
     a = o.append
     scan0 = 122.0
@@ -260,7 +269,7 @@ def build_svg():
 
     # ---------------------------------------------------------------- defs
     a("<defs>")
-    a('<clipPath id="pc"><rect width="880" height="360" rx="16"/></clipPath>')
+    a(f'<clipPath id="pc"><rect width="{W}" height="{H}" rx="16"/></clipPath>')
     a(f'<clipPath id="fc"><rect x="{CX - FRAME}" y="{CY - FRAME}" width="{2 * FRAME}" height="{2 * FRAME}"/></clipPath>')
     a('<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">'
       '<stop offset="0" stop-color="#0C1838"/><stop offset=".55" stop-color="#060B1D"/>'
@@ -269,10 +278,10 @@ def build_svg():
       '<stop offset="0" stop-color="#19CFFF" stop-opacity=".2"/>'
       '<stop offset=".5" stop-color="#2B6BFF" stop-opacity=".07"/>'
       '<stop offset="1" stop-color="#2B6BFF" stop-opacity="0"/></radialGradient>')
-    a('<radialGradient id="gB" gradientUnits="userSpaceOnUse" cx="90" cy="400" r="330">'
+    a(f'<radialGradient id="gB" gradientUnits="userSpaceOnUse" cx="90" cy="{H + 40}" r="330">'
       '<stop offset="0" stop-color="#7A45FF" stop-opacity=".22"/>'
       '<stop offset="1" stop-color="#7A45FF" stop-opacity="0"/></radialGradient>')
-    a('<radialGradient id="gC" gradientUnits="userSpaceOnUse" cx="880" cy="0" r="240">'
+    a(f'<radialGradient id="gC" gradientUnits="userSpaceOnUse" cx="{W}" cy="0" r="240">'
       '<stop offset="0" stop-color="#FF3DAE" stop-opacity=".1"/>'
       '<stop offset="1" stop-color="#FF3DAE" stop-opacity="0"/></radialGradient>')
     a('<pattern id="g1" width="15" height="15" patternUnits="userSpaceOnUse" x="10" y="0">'
@@ -282,7 +291,7 @@ def build_svg():
     a(f'<radialGradient id="gmg" gradientUnits="userSpaceOnUse" cx="{CX}" cy="{CY}" r="560">'
       '<stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#777"/>'
       '<stop offset="1" stop-color="#2a2a2a"/></radialGradient>')
-    a('<mask id="gm"><rect width="880" height="360" fill="url(#gmg)"/></mask>')
+    a(f'<mask id="gm"><rect width="{W}" height="{H}" fill="url(#gmg)"/></mask>')
     a('<linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">'
       f'<stop offset="0" stop-color="{CYAN}" stop-opacity=".55"/>'
       '<stop offset=".45" stop-color="#5B7BC8" stop-opacity=".18"/>'
@@ -325,27 +334,28 @@ def build_svg():
 
     # ---------------------------------------------------------- background
     a('<g clip-path="url(#pc)">')
-    a('<rect width="880" height="360" fill="url(#bg)"/>')
-    a('<rect width="880" height="360" fill="url(#gB)"/>')
-    a('<rect width="880" height="360" fill="url(#gC)"/>')
-    a('<rect width="880" height="360" fill="url(#gA)"/>')
-    a('<g mask="url(#gm)"><rect width="880" height="360" fill="url(#g1)"/>'
-      '<rect width="880" height="360" fill="url(#g2)"/></g>')
+    a(f'<rect width="{W}" height="{H}" fill="url(#bg)"/>')
+    a(f'<rect width="{W}" height="{H}" fill="url(#gB)"/>')
+    a(f'<rect width="{W}" height="{H}" fill="url(#gC)"/>')
+    a(f'<rect width="{W}" height="{H}" fill="url(#gA)"/>')
+    a(f'<g mask="url(#gm)"><rect width="{W}" height="{H}" fill="url(#g1)"/>'
+      f'<rect width="{W}" height="{H}" fill="url(#g2)"/></g>')
 
     # ---------------------------------------------------------- left column
-    X0 = 44
-    LW = 428           # lock-up width (name, tagline, domains and chips justify to it)
+    if mobile:
+        a(f'<g transform="translate({f(24 - X0 * K)} 0) scale({K:.4f})">')
     YT = 49.5          # top rail baseline
-    YB = 319           # bottom rail baseline
+    YB = 292 if mobile else 319   # bottom rail baseline
     # top rail
     a(f'<rect class="bk" x="{X0}" y="{f(YT - 8.2)}" width="7.6" height="7.6" fill="{CYAN}"/>')
     a(f'<text class="m" x="{X0 + 16}" y="{YT}" font-size="12" letter-spacing="2.2" fill="{MUTED}">'
       f'<tspan fill="{CYAN_HI}" font-weight="600">MISSION CONTROL</tspan>'
       f'<tspan fill="#56678F"> // </tspan>TUMOR MICROENVIRONMENT</text>')
-    a(f'<path d="M458 {f(YT - 4.3)}H526" stroke="url(#eg)" stroke-width="1" fill="none"/>')
-    a(f'<path class="pl" d="M458 {f(YT - 4.3)}H526" stroke="#D9FCFF" stroke-width="1.2" fill="none" '
-      f'stroke-dasharray="12 400" stroke-dashoffset="12" stroke-linecap="round"/>')
-    a(f'<path d="M526 {f(YT - 8.3)}v8" stroke="{CYAN}" stroke-opacity=".8" stroke-width="1"/>')
+    if not mobile:
+        a(f'<path d="M458 {f(YT - 4.3)}H526" stroke="url(#eg)" stroke-width="1" fill="none"/>')
+        a(f'<path class="pl" d="M458 {f(YT - 4.3)}H526" stroke="#D9FCFF" stroke-width="1.2" fill="none" '
+          f'stroke-dasharray="12 400" stroke-dashoffset="12" stroke-linecap="round"/>')
+        a(f'<path d="M526 {f(YT - 8.3)}v8" stroke="{CYAN}" stroke-opacity=".8" stroke-width="1"/>')
 
     # name
     NY = 146
@@ -379,15 +389,19 @@ def build_svg():
     # bottom rail: ORCID + phase ruler
     a(f'<text class="m" x="{X0}" y="{YB}" font-size="12" letter-spacing="1.4" fill="#A9B8D6">'
       f'<tspan fill="{CYAN_HI}" font-weight="600">ORCID</tspan> 0009-0005-8480-5387</text>')
-    RX0, RL = 270, 256
-    d_minor = "".join(f"M{RX0 + k * 8} {YB}v-3" for k in range(RL // 8 + 1) if k % 8)
-    d_major = "".join(f"M{RX0 + k * 64} {YB}v-7" for k in range(5))
-    a(f'<path d="M{RX0} {YB}H{RX0 + RL}" stroke="#6FD3FF" stroke-opacity=".4" stroke-width="1"/>')
-    a(f'<path d="{d_minor}" stroke="#6FD3FF" stroke-opacity=".4" stroke-width="1"/>')
-    a(f'<path d="{d_major}" stroke="{CYAN_HI}" stroke-opacity=".85" stroke-width="1.2"/>')
-    a(f'<g transform="translate({RX0} {YB})"><g class="hd">'
-      f'<path d="M0 -4.5l-3.6 -6.4h7.2z" fill="{CYAN_HI}"/>'
-      f'<path d="M0 0v-4.5" stroke="{CYAN_HI}" stroke-width="1"/></g></g>')
+    if not mobile:
+        RX0, RL = 270, 256
+        d_minor = "".join(f"M{RX0 + k * 8} {YB}v-3" for k in range(RL // 8 + 1) if k % 8)
+        d_major = "".join(f"M{RX0 + k * 64} {YB}v-7" for k in range(5))
+        a(f'<path d="M{RX0} {YB}H{RX0 + RL}" stroke="#6FD3FF" stroke-opacity=".4" stroke-width="1"/>')
+        a(f'<path d="{d_minor}" stroke="#6FD3FF" stroke-opacity=".4" stroke-width="1"/>')
+        a(f'<path d="{d_major}" stroke="{CYAN_HI}" stroke-opacity=".85" stroke-width="1.2"/>')
+        a(f'<g transform="translate({RX0} {YB})"><g class="hd">'
+          f'<path d="M0 -4.5l-3.6 -6.4h7.2z" fill="{CYAN_HI}"/>'
+          f'<path d="M0 0v-4.5" stroke="{CYAN_HI}" stroke-width="1"/></g></g>')
+
+    if mobile:
+        a('</g>')
 
     # ---------------------------------------------------------- radar frame
     x1, y1, x2, y2 = CX - FRAME, CY - FRAME, CX + FRAME, CY + FRAME
@@ -398,17 +412,18 @@ def build_svg():
       f'M{x1 + b} {y2}H{x1}V{y2 - b}" fill="none" stroke="{CYAN}" stroke-width="1.5"/>')
     a(f'<path d="M{CX} {y1}v5M{CX} {y2}v-5M{x1} {CY}h5M{x2} {CY}h-5" stroke="{CYAN}" stroke-opacity=".7" stroke-width="1"/>')
     # corner labels
-    a(f'<circle class="bk" cx="{x1 + 15}" cy="{f(YT - 4.2)}" r="3" fill="{CYAN}"/>')
-    a(f'<text class="m" x="{x1 + 25}" y="{YT}" font-size="12" font-weight="600" letter-spacing="2" fill="{CYAN_HI}">TME SCAN</text>')
-    a(f'<text class="m" x="{x2 - 25}" y="{YT}" font-size="12" letter-spacing="1" text-anchor="end" fill="{CYAN_HI}">CD8+ T</text>')
+    FT, FB = y1 + 19.5, y2 - 11
+    a(f'<circle class="bk" cx="{x1 + 15}" cy="{f(FT - 4.2)}" r="3" fill="{CYAN}"/>')
+    a(f'<text class="m" x="{x1 + 25}" y="{FT}" font-size="12" font-weight="600" letter-spacing="2" fill="{CYAN_HI}">TME SCAN</text>')
+    a(f'<text class="m" x="{x2 - 25}" y="{FT}" font-size="12" letter-spacing="1" text-anchor="end" fill="{CYAN_HI}">CD8+ T</text>')
     gx = x2 - 14
-    a(f'<circle cx="{gx}" cy="{f(YT - 4.2)}" r="3.8" fill="{CYAN}"/>'
-      f'<circle cx="{gx}" cy="{f(YT - 4.2)}" r="6" fill="none" stroke="{CYAN}" stroke-opacity=".5" stroke-width=".8"/>')
-    a(f'<circle cx="{x1 + 15}" cy="{f(YB - 4.2)}" r="5.6" fill="#3A0F3C" stroke="{MAG}" stroke-width="1.1"/>'
-      f'<circle cx="{x1 + 15}" cy="{f(YB - 4.2)}" r="2.4" fill="{MAG}"/>')
-    a(f'<text class="m" x="{x1 + 27}" y="{YB}" font-size="12" letter-spacing="1" fill="{MAG_HI}">TUMOR</text>')
-    a(f'<text class="m" x="{x2 - 26}" y="{YB}" font-size="12" letter-spacing="1" text-anchor="end" fill="{VIO_HI}">MACROPHAGE</text>')
-    a(f'<g transform="translate({gx - 1} {f(YB - 4.2)})"><use xlink:href="#mac" fill="#22184F" stroke="{VIO_HI}" stroke-width="1.1"/>'
+    a(f'<circle cx="{gx}" cy="{f(FT - 4.2)}" r="3.8" fill="{CYAN}"/>'
+      f'<circle cx="{gx}" cy="{f(FT - 4.2)}" r="6" fill="none" stroke="{CYAN}" stroke-opacity=".5" stroke-width=".8"/>')
+    a(f'<circle cx="{x1 + 15}" cy="{f(FB - 4.2)}" r="5.6" fill="#3A0F3C" stroke="{MAG}" stroke-width="1.1"/>'
+      f'<circle cx="{x1 + 15}" cy="{f(FB - 4.2)}" r="2.4" fill="{MAG}"/>')
+    a(f'<text class="m" x="{x1 + 27}" y="{FB}" font-size="12" letter-spacing="1" fill="{MAG_HI}">TUMOR</text>')
+    a(f'<text class="m" x="{x2 - 26}" y="{FB}" font-size="12" letter-spacing="1" text-anchor="end" fill="{VIO_HI}">MACROPHAGE</text>')
+    a(f'<g transform="translate({gx - 1} {f(FB - 4.2)})"><use xlink:href="#mac" fill="#22184F" stroke="{VIO_HI}" stroke-width="1.1"/>'
       f'<ellipse cx="1" cy="-.7" rx="2.5" ry="1.6" transform="rotate(-25)" fill="{VIO_HI}"/></g>')
 
     # ---------------------------------------------------------- instrument
@@ -538,7 +553,7 @@ def build_svg():
 
     a("</g>")
     # panel border
-    a('<rect x=".5" y=".5" width="879" height="359" rx="15.5" fill="none" stroke="url(#edge)" stroke-width="1"/>')
+    a(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="15.5" fill="none" stroke="url(#edge)" stroke-width="1"/>')
     a("</svg>")
     return "\n".join(o) + "\n"
 
@@ -548,7 +563,11 @@ def build(out_dir) -> list:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
         fh.write(build_svg())
-    return ["hero.svg"]
+    narrow = os.path.join(str(out_dir), "m", "hero.svg")
+    os.makedirs(os.path.dirname(narrow), exist_ok=True)
+    with open(narrow, "w", encoding="utf-8") as fh:
+        fh.write(build_svg(mobile=True))
+    return ["hero.svg", "m/hero.svg"]
 
 
 if __name__ == "__main__":

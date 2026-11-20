@@ -1,7 +1,7 @@
 <a name="top"></a>
 
 <p align="center">
-  <img src="assets/hud/hero.svg" width="100%" alt="Alex Wang. Experimental × computational cancer research: tumor immunology, functional genomics, single-cell and spatial omics. An animated mission-control view scanning a schematic tumor microenvironment." />
+  <picture><source media="(max-width: 640px)" srcset="assets/hud/m/hero.svg" /><img src="assets/hud/hero.svg" width="100%" alt="Alex Wang. Experimental × computational cancer research: tumor immunology, functional genomics, single-cell and spatial omics. An animated mission-control view scanning a schematic tumor microenvironment." /></picture>
 </p>
 
 <p align="center">
