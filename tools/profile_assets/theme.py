@@ -22,7 +22,7 @@ T = {
     # text
     "hi": "#eaf2ff",
     "mid": "#a3b3cc",
-    "low": "#62748f",
+    "low": "#7889a6",       # 5.3:1 on bg2, passes WCAG AA for small text
     # accents
     "cyan": "#2ce8ff",
     "cyan2": "#9ff4ff",

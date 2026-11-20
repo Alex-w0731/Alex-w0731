@@ -193,15 +193,15 @@ A curated map of **97 public GitHub resources** for experimental and computation
 
 <p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-pubs.svg" /><img src="assets/hud/sec-pubs.svg" width="100%" alt="06 / Selected publications" /></picture></p>
 
-**2025 · Cell & Bioscience**<br />
+<img src="assets/hud/pub-cell-bioscience.svg" height="26" alt="2025 · Cell &amp; Bioscience" /><br />
 [**KDM6B inhibition enhances chemotherapeutic response in small cell lung cancer via epigenetic regulation of apoptosis and ferroptosis. ↗**](https://doi.org/10.1186/s13578-025-01496-6)<br />
 <sub>Wang Z&#42;, Liu Z&#42;, Yang Y&#42;, et al.</sub>
 
-**2024 · JACS Au**<br />
+<img src="assets/hud/pub-jacs-au.svg" height="26" alt="2024 · JACS Au" /><br />
 [**A reconfigurable DNA framework nanotube-assisted antiangiogenic therapy. ↗**](https://doi.org/10.1021/jacsau.3c00661)<br />
 <sub>Li W&#42;, Wang Z&#42;, Su Q&#42;, et al.</sub>
 
-**2025 · Biology Direct**<br />
+<img src="assets/hud/pub-biology-direct.svg" height="26" alt="2025 · Biology Direct" /><br />
 [**Large-scale bulk and single-cell RNA sequencing combined with machine learning reveals glioblastoma-associated neutrophil heterogeneity and establishes a VEGFA+ neutrophil prognostic model. ↗**](https://doi.org/10.1186/s13062-025-00640-z)<br />
 <sub>Yang Y&#42;, Liu Z&#42;, Wang Z&#42;, et al.</sub>
 

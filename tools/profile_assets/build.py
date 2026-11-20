@@ -19,7 +19,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
 OUT = REPO / "assets" / "hud"
-MODULES = ["hero", "hero_alt", "sections", "loop", "cards", "featured", "stack", "radar", "footer", "buttons"]
+MODULES = ["hero", "hero_alt", "sections", "loop", "cards", "featured", "stack", "radar", "pubs", "footer", "buttons"]
 
 sys.path.insert(0, str(HERE))
 

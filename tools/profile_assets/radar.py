@@ -73,7 +73,7 @@ def build_mobile_svg() -> str:
         out.append(
             f'  <rect x="24" y="{y - 14}" width="28" height="22" rx="6" fill="{c}" fill-opacity=".12" stroke="{c}" stroke-opacity=".7"/>'
             + text(38, y + 1.5, f"0{i + 1}", size=12, cls="mono b", anchor="middle", extra=f' fill="{c}"')
-            + text(64, y + 1, title, size=15, cls="sans sb hi")
+            + text(64, y + 1, title, size=14, cls="sans sb hi")
             + text(64, y + 21, methods, size=11.5, cls="mono low")
         )
     yb = y0 + len(DIRECTIONS) * step + 10
