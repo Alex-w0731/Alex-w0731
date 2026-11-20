@@ -9,6 +9,8 @@
   &nbsp;
   <a href="https://orcid.org/0009-0005-8480-5387"><img src="assets/hud/btn-orcid.svg" height="36" alt="ORCID 0009-0005-8480-5387" /></a>
   &nbsp;
+  <a href="https://github.com/Alex-w0731/tumor-immunology-skills"><img src="assets/hud/btn-skills.svg" height="36" alt="Agent skills for tumor immunology research" /></a>
+  &nbsp;
   <a href="https://github.com/Alex-w0731/tmelens"><img src="assets/hud/btn-tmelens.svg" height="36" alt="tmelens toolkit" /></a>
 </p>
 
@@ -27,7 +29,7 @@
 
 Hi, I'm **Alex Wang**. I connect experiments and computation to **identify and validate therapeutic targets in cancer**.
 
-My work spans tumor omics, single-cell and spatial analysis, functional genomics, and in vivo models. I also have experience in **DNA nanomedicine and targeted drug delivery**. My recent open-source work looks at the **tumor immune microenvironment**: a transparent profiling toolkit for bulk transcriptomes.
+My work spans tumor omics, single-cell and spatial analysis, functional genomics, and in vivo models. I also have experience in **DNA nanomedicine and targeted drug delivery**. My recent open-source work looks at the **tumor immune microenvironment**: a transparent profiling toolkit and a set of agent skills for tumor immunology research.
 
 <p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/loop.svg" /><img src="assets/hud/loop.svg" width="100%" alt="Research loop: observe tumor and clinical data → model single-cell and spatial patterns → perturb with functional genomics → validate mechanisms and targets → return with new questions." /></picture></p>
 
@@ -46,6 +48,15 @@ I enjoy the space where an unexpected pattern becomes a testable question—and 
 <a name="open-tools"></a>
 
 <p><picture><source media="(max-width: 640px)" srcset="assets/hud/m/sec-build.svg" /><img src="assets/hud/sec-build.svg" width="100%" alt="02 / Open tools" /></picture></p>
+
+<p><a href="https://github.com/Alex-w0731/tumor-immunology-skills"><picture><source media="(max-width: 640px)" srcset="assets/hud/m/feat-skills.svg" /><img src="assets/hud/feat-skills.svg" width="100%" alt="tumor-immunology-skills: evidence-linked agent skills for tumor immunology research, with cited sources, standard-library scripts, unit tests and evals." /></picture></a></p>
+
+**[tumor-immunology-skills ↗](https://github.com/Alex-w0731/tumor-immunology-skills)** — agent skills (`SKILL.md`) that teach coding agents how to handle tumor-immune data with rigor: when to distrust a correlation, how to avoid cut-point fishing, why the patient is the unit of replication. Thresholds and attributed claims cite sources whose DOIs and PMIDs are checked automatically, bundled scripts run on the Python standard library with unit tests, and each skill ships evals. Research use only.
+
+```text
+/plugin marketplace add Alex-w0731/tumor-immunology-skills
+/plugin install tumor-immunology@tumor-immunology-skills
+```
 
 <p><a href="https://github.com/Alex-w0731/tmelens"><picture><source media="(max-width: 640px)" srcset="assets/hud/m/feat-tmelens.svg" /><img src="assets/hud/feat-tmelens.svg" width="100%" alt="tmelens: look inside the tumour immune microenvironment from a bulk expression matrix. Signature scoring, hot / excluded / cold phenotypes, deconvolution, survival, ICB response." /></picture></a></p>
 
