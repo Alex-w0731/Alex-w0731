@@ -51,7 +51,7 @@ I enjoy the space where an unexpected pattern becomes a testable question—and 
 
 <p><a href="https://github.com/Alex-w0731/tumor-immunology-skills"><picture><source media="(max-width: 640px)" srcset="assets/hud/m/feat-skills.svg" /><img src="assets/hud/feat-skills.svg" width="100%" alt="tumor-immunology-skills: evidence-linked agent skills for tumor immunology research, with cited sources, standard-library scripts, unit tests and evals." /></picture></a></p>
 
-**[tumor-immunology-skills ↗](https://github.com/Alex-w0731/tumor-immunology-skills)** — agent skills (`SKILL.md`) that teach coding agents how to handle tumor-immune data with rigor: when to distrust a correlation, how to avoid cut-point fishing, why the patient is the unit of replication. Thresholds and attributed claims cite sources whose DOIs and PMIDs are checked automatically, bundled scripts run on the Python standard library with unit tests, and each skill ships evals. Research use only.
+**[tumor-immunology-skills ↗](https://github.com/Alex-w0731/tumor-immunology-skills)** — agent skills (`SKILL.md`) that teach coding agents how to handle tumor-immune data with rigor: when to distrust a correlation, how to avoid cut-point fishing, why the patient is the unit of replication. Thresholds and attributed claims cite sources whose DOIs and PMIDs are checked automatically, bundled scripts run on the Python standard library with unit tests, and each skill ships evals. In a blind comparison, answers written with the skills passed 48 of 48 graded statements versus 39 of 48 without them ([details](https://github.com/Alex-w0731/tumor-immunology-skills/blob/main/docs/evals.md)). Research use only.
 
 ```text
 /plugin marketplace add Alex-w0731/tumor-immunology-skills
